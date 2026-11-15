@@ -9,8 +9,8 @@ body{font-family:-apple-system,system-ui,sans-serif;font-size:20px;line-height:1
 
 .name{margin:4px 0 12px;text-align:center;font-size:18px;font-weight:600;color:#222;letter-spacing:.01em}
 
-.huge-start{display:block;width:100%;min-height:110px;margin:0 0 14px;padding:16px 12px;border:0;border-radius:16px;background:#006627;color:#fff;font-size:42px;font-weight:800;letter-spacing:.02em;line-height:1.05;text-align:center;cursor:pointer;-webkit-tap-highlight-color:transparent}
-.huge-start small{display:block;margin-top:6px;font-size:22px;font-weight:700;color:#fff;letter-spacing:0}
+.huge-start{display:block;width:100%;min-height:110px;margin:0 0 12px;padding:16px 12px;border:0;border-radius:16px;background:#006627;color:#fff;font-size:30px;font-weight:800;letter-spacing:.01em;line-height:1.15;text-align:center;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.huge-start small{display:block;margin-top:4px;font-size:18px;font-weight:700;color:#fff;letter-spacing:0}
 .huge-start:active{background:#00521f}
 
 .copy-agent{display:block;width:100%;min-height:72px;margin:0 0 12px;padding:14px 12px;border:3px solid #111;border-radius:14px;background:#111;color:#fff;font-size:22px;font-weight:700;line-height:1.2;text-align:center;cursor:pointer;-webkit-tap-highlight-color:transparent}
@@ -50,10 +50,17 @@ h2{font-size:26px;text-align:center;margin:14px 0;color:#111}
 /* Fit the full home screen on a short iPhone SE, with Ещё still visible. */
 @media (max-height: 620px), (max-width: 360px){
   .name{margin:2px 0 8px}
-  .huge-start{margin-bottom:8px}
+  .huge-start{margin-bottom:8px;font-size:24px}
+  .streak{font-size:22px;margin-bottom:6px}
+  .copybtn{min-height:48px;margin-bottom:8px;font-size:18px}
   .copy-agent{margin-bottom:8px;padding:10px 10px;font-size:20px}
   .copy-agent small{font-size:17px}
   .steps{padding:10px 12px}
   .steps p{margin:0 0 4px;line-height:1.3}
   .more-link{min-height:56px;padding:12px}
 }
+
+.streak{text-align:center;font-size:26px;font-weight:800;margin:0 0 10px;color:#006627}
+.copybtn{display:block;width:100%;min-height:52px;margin:0 0 12px;padding:12px;border:3px solid #111;border-radius:14px;background:#fff;color:#111;font-size:20px;font-weight:800;text-align:center;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.copy-fallback{position:fixed;left:-9999px;top:0;width:1px;height:1px;opacity:0}
+.sub{text-align:center;color:#333;margin:0 0 8px;font-size:18px}

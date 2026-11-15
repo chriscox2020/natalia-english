@@ -4,6 +4,16 @@ const $=id=>document.getElementById(id);
 let D=null;
 let LS=null; try{LS=window.localStorage}catch(e){LS=null}
 const S={get:(k,d)=>{try{if(!LS)return d;const v=LS.getItem('ns_'+k);return v==null?d:JSON.parse(v)}catch(e){return d}},set:(k,v)=>{try{if(LS)LS.setItem('ns_'+k,JSON.stringify(v))}catch(e){}}};
+const STREAK_KEY='natalia_daily_streak';
+function localISODate(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+function addCalendarDays(iso,delta){const [y,m,day]=iso.split('-').map(Number);const dt=new Date(y,m-1,day);dt.setDate(dt.getDate()+delta);return localISODate(dt);}
+function ruDayWord(n){const a=Math.abs(Math.trunc(n))%100,b=a%10;if(a>=11&&a<=14)return 'дней';if(b===1)return 'день';if(b>=2&&b<=4)return 'дня';return 'дней';}
+function readStreak(){try{if(!LS)return {count:0,last:''};const v=JSON.parse(LS.getItem(STREAK_KEY)||'null');if(v&&typeof v.count==='number'&&typeof v.last==='string')return {count:v.count,last:v.last};}catch(e){}return {count:0,last:''};}
+function writeStreak(v){try{if(LS)LS.setItem(STREAK_KEY,JSON.stringify(v));}catch(e){}}
+function shownStreak(){const s=readStreak();if(!s.last||s.count<1)return 0;const today=localISODate(new Date());if(s.last===today||s.last===addCalendarDays(today,-1))return s.count;return 0;}
+function renderStreak(){const el=$('streak');if(!el)return;const n=shownStreak();el.textContent='🔥 '+n+' '+ruDayWord(n)+' подряд';}
+function recordStreak(){const today=localISODate(new Date());const s=readStreak();if(s.last===today&&s.count>0){renderStreak();return;}
+  const count=(s.last===addCalendarDays(today,-1)&&s.count>0)?s.count+1:1;writeStreak({count:count,last:today});renderStreak();}
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const player=new Audio(); player.preload='auto'; player.id='lessonPlayer'; player.style.display='none'; document.body.appendChild(player);
 let stopFlag=false, runId=0, audioUnlocked=false;
@@ -106,12 +116,21 @@ function sessionFor(kind,lessonId){
   if(kind==='busy'){let it=weakItems(4).concat(dueItems(4));const l=lessonById(nextLessonId());it=it.concat(l.items.slice(0,8-it.length));
     return {kind,title:'Занятой день: 10 минут',items:[...new Set(it.map(i=>i.id))].slice(0,10)};}
 }
+/* Hands-free pass: English line, speak window, English line, speak window. */
+function carExposureSeconds(dur){const en=dur>0?dur:3;const rep=Math.max(2.5,en*1.5);return en+rep+en+rep+0.5;}
+function repeatsFor(items){let base=0;for(const id of items){const it=itemById(id);base+=carExposureSeconds(it&&it.dur);}
+  const overhead=3.8+4.5+7.6;let best=1,score=1e9,fallback=1,fall=1e9;
+  for(let k=1;k<=12;k++){const t=overhead+k*base,diff=Math.abs(t-12.5*60);if(diff<fall){fall=diff;fallback=k;}
+    if(t<10*60||t>15*60)continue;if(diff<score){score=diff;best=k;}}
+  return score<1e9?best:fallback;}
+function sizedLesson(lessonId){const sess=sessionFor('lesson',lessonId);sess.reps=repeatsFor(sess.items);return sess;}
+function anotherLessonId(id){const i=D.lessons.findIndex(l=>l.id===id);return D.lessons[(i<0?0:i+1)%D.lessons.length].id;}
 const itemById=id=>allItems().find(i=>i.id===id);
 function saveState(mode,sess,idx){S.set('resume',{mode,sess,idx,t:Date.now()});}
-function clearState(){LS.removeItem('ns_resume');}
+function clearState(){try{if(LS)LS.removeItem('ns_resume')}catch(e){}}
 function pushHistory(sess){if(sess.kind!=='lesson')return;const h=S.get('hist',[]);if(h[h.length-1]!==sess.lessonId)h.push(sess.lessonId);S.set('hist',h.slice(-30));}
 function previousLesson(currentId){const h=S.get('hist',[]);for(let i=h.length-1;i>=0;i--)if(h[i]!==currentId)return h[i];return currentId||h[h.length-1]||D.lessons[0].id;}
-function finishLesson(sess){if(sess.kind==='lesson'){const d=S.get('done',[]);if(!d.includes(sess.lessonId))d.push(sess.lessonId);else S.set('rot',S.get('rot',0)+1);S.set('done',d);}clearState();}
+function finishLesson(sess){recordStreak();if(sess&&sess.kind==='lesson'){const d=S.get('done',[]);if(!d.includes(sess.lessonId))d.push(sess.lessonId);else S.set('rot',S.get('rot',0)+1);S.set('done',d);}clearState();}
 
 /* ---------- Normal lesson (audio only, no lesson text on screen) ---------- */
 let L=null;
@@ -160,7 +179,7 @@ let C=null,wake=null;
 async function keepAwake(){try{if('wakeLock' in navigator)wake=await navigator.wakeLock.request('screen');}catch(e){}}
 document.addEventListener('visibilitychange',()=>{if(C&&document.visibilityState==='visible')keepAwake();});
 function setCar(status,heard){if(status!=null)$('carStatus').textContent=status;if(heard!=null)$('carHeard').textContent=heard;}
-async function startCar(sess,idx=0){stopAll();stopFlag=false;unlockAudio();const my=++runId;C={sess,idx,run:my,paused:false,smart:false};pushHistory(sess);
+async function startCar(sess,idx=0){recordStreak();stopAll();stopFlag=false;unlockAudio();const my=++runId;C={sess,idx,run:my,paused:false,smart:false};pushHistory(sess);
   if($('carTitle'))$('carTitle').textContent=sess.title;show('car');keepAwake();setCar('','');
   // Play a cue immediately so iOS allows later audio (gesture is lost after model load).
   const primed=play((idx===0&&D&&D.cues)?D.cues.start:D&&D.cues?D.cues.resume:'');
@@ -173,12 +192,20 @@ async function startCar(sess,idx=0){stopAll();stopFlag=false;unlockAudio();const
   carLoop(my);}
 async function carCommand(text,my){const c=Cmp.command(text);if(c==='stop'){await carStop();return true;}
   if(c==='back'){await carBack();return true;}return false;}
+let finishSess=null;
+function showFinish(sess){finishSess=sess;if($('finishInfo'))$('finishInfo').textContent=sess.title||'';show('finish');}
 async function carLoop(my){
   while(C&&my===runId&&C.idx<C.sess.items.length){const it=itemById(C.sess.items[C.idx]);saveState('car',C.sess,C.idx);
-    $('carCount').textContent=(C.idx+1)+' / '+C.sess.items.length;$('carBar').style.width=(100*C.idx/C.sess.items.length)+'%';
-    let ok=C.smart?await carSmartItem(it,my):await carTimedItem(it,my);if(my!==runId)return;
-    mark(it.id,ok);C.idx++;await sleep(500);}
-  if(C&&my===runId){$('carBar').style.width='100%';setCar('Готово','');finishLesson(C.sess);await praise('lesson');await play(D.cues.done);releaseCar();goHome();}}
+    const reps=C.sess.reps||1,n=C.sess.items.length;
+    if(!it){C.idx++;continue;}
+    for(let r=0;r<reps;r++){if(!C||my!==runId)return;
+      if($('carCount'))$('carCount').textContent=(C.idx+1)+' / '+n+(reps>1?' · повтор '+(r+1)+' / '+reps:'');
+      if($('carBar'))$('carBar').style.width=(100*C.idx/n)+'%';
+      const ok=(C.smart&&r===0)?await carSmartItem(it,my):await carTimedItem(it,my);
+      if(my!==runId)return;if(r===0)mark(it.id,!!ok);}
+    if(!C||my!==runId)return;C.idx++;await sleep(500);}
+  if(C&&my===runId){const sess=C.sess;if($('carBar'))$('carBar').style.width='100%';setCar('Готово','');finishLesson(sess);await praise('lesson');await play(D.cues.done);releaseCar();
+    if(sess.reps>1)showFinish(sess);else goHome();}}
 async function carTimedItem(it,my){setCar('Слушайте','');await play(it.audio);if(my!==runId)return false;setCar('Говорите','');await sleep(Math.max(2500,it.dur*1500));
   if(my!==runId)return false;setCar('Слушайте','');await play(it.audio);if(my!==runId)return false;setCar('Говорите','');await sleep(Math.max(2500,it.dur*1500));return true;}
 async function hear(my,wait){let a=await listen(wait,my);if(my!==runId)return null;
@@ -207,7 +234,7 @@ function releaseCar(){try{wake&&wake.release()}catch(e){}wake=null;C=null;}
 
 /* ---------- Common ---------- */
 function stopAll(){runId++;stopAudio();MIC.rec=false;}
-function goHome(){stopAll();if(C)releaseCar();L=null;show('home');}
+function goHome(){stopAll();if(C)releaseCar();L=null;renderStreak();show('home');}
 function renderTopics(){const box=$('topicList');if(!box||!D)return;box.innerHTML='';const done=S.get('done',[]);D.lessons.forEach(l=>{const b=document.createElement('button');b.className='topic';b.type='button';
   b.innerHTML=l.title+'<br><small>'+l.track+'</small>';b.onclick=()=>{unlockAudio();startCar(sessionFor('lesson',l.id),0);};box.appendChild(b);});}
 function renderWeak(){const r=S.get('srs',{});const w=weakItems(30);const box=$('weakList');box.innerHTML='';
@@ -231,7 +258,7 @@ async function onStart(){
     S.set('heardIntro',true);
   }
   const r=S.get('resume',null);
-  const sess=(r&&r.sess)?r.sess:sessionFor('lesson',nextLessonId());
+  const sess=(r&&r.sess)?r.sess:sizedLesson(nextLessonId());
   const idx=(r&&r.sess)?(r.idx||0):0;
   await micP;
   startCar(sess,idx);
@@ -241,7 +268,7 @@ async function init(){
   // Always keep the home screen and the green START button visible, even if data fails.
   show('home');
   try{
-    D=await (await fetch('data.json?v=202611151550',{cache:'no-cache'})).json();
+    D=await (await fetch('data.json?v=202611151700',{cache:'no-cache'})).json();
     if($('introEn1')){$('introEn1').textContent=D.intro[0].en;$('introRu1').textContent=D.intro[0].ru;$('introEn2').textContent=D.intro[1].en;$('introRu2').textContent=D.intro[1].ru;}
   }catch(e){
     console.warn('data.json',e);
@@ -258,6 +285,19 @@ async function init(){
   document.querySelectorAll('[data-nav]').forEach(b=>b.onclick=()=>{const n=b.getAttribute('data-nav');if(n==='home')goHome();else show(n);});
   on('carStop',()=>carStop());
   on('carBack',()=>carBack());
+  on('btnRepeat',()=>{if(!finishSess||!finishSess.lessonId)return;unlockAudio();startCar(sizedLesson(finishSess.lessonId),0);});
+  on('btnAnother',()=>{if(!finishSess||!finishSess.lessonId)return;unlockAudio();startCar(sizedLesson(anotherLessonId(finishSess.lessonId)),0);});
+  on('btnFinishHome',()=>goHome());
+  renderStreak();
 }
+const COPY_TEXT='Скопируйте эту ссылку и вставьте в вашего агента Grok: https://chriscox2020.github.io/natalia-english/';
+let copyTimer=0;
+function fallbackCopy(text){const ta=$('copyFallback');if(!ta)return false;ta.value=text;try{ta.focus();ta.select();ta.setSelectionRange(0,text.length);return document.execCommand('copy');}catch(e){return false;}}
+const copyBtn=$('btnCopy');
+if(copyBtn)copyBtn.addEventListener('click',async e=>{e.preventDefault();e.stopPropagation();let ok=false;
+  try{if(navigator.clipboard&&navigator.clipboard.writeText){await navigator.clipboard.writeText(COPY_TEXT);ok=true;}}catch(err){ok=false;}
+  if(!ok)ok=copySync(COPY_TEXT)||fallbackCopy(COPY_TEXT);
+  if(!ok)return;copyBtn.textContent='Скопировано';clearTimeout(copyTimer);copyTimer=setTimeout(()=>{copyBtn.textContent='Копировать';},2000);});
+renderStreak();
 init();
 })();

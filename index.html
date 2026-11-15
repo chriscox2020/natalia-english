@@ -5,13 +5,17 @@
 <meta name="theme-color" content="#006627">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<link rel="stylesheet" href="style.css?v=202611151550">
+<link rel="stylesheet" href="style.css?v=202611151700">
 </head><body>
 <div id="app">
 
 <section id="home" class="screen active">
   <p class="name">Наталия Штефан</p>
-  <button class="huge-start" id="btnStart" type="button">▶ НАЧАТЬ<br><small>Start</small></button>
+  <p class="streak" id="streak">🔥 0 дней подряд</p>
+  <a class="big" id="btnOpen" href="https://chriscox2020.github.io/natalia-english/">Открыть программу</a>
+  <button class="huge-start" id="btnStart" type="button">Нажмите, чтобы начать<br><small>Start</small></button>
+  <button type="button" class="copybtn" id="btnCopy">Копировать</button>
+  <textarea id="copyFallback" class="copy-fallback" readonly aria-hidden="true" tabindex="-1"></textarea>
   <button class="copy-agent" id="btnCopyAgent" type="button">Copy this to my Grok agent<br><small>Скопировать для моего Grok</small></button>
   <p id="copyStatus" class="copy-status hidden">Скопировано! Теперь вставьте в Grok.</p>
   <div class="steps">
@@ -36,7 +40,7 @@
   <button class="big" id="btnProgress" type="button">Мой прогресс</button>
   <button class="big" id="btnTopics" type="button">Все темы</button>
   <div class="card notes">
-    <p><b>Стоп-слово.</b> В любой момент скажите «quiet» или «тихо». Программа остановится и запомнит, где вы остановились. Когда вернётесь, нажмите большую зелёную кнопку «НАЧАТЬ», и урок продолжится с того же места.</p>
+    <p><b>Стоп-слово.</b> В любой момент скажите «quiet» или «тихо». Программа остановится и запомнит, где вы остановились. Когда вернётесь, нажмите большую зелёную кнопку «Нажмите, чтобы начать», и урок продолжится с того же места.</p>
     <p><b>Назад.</b> Чтобы вернуться к прошлому уроку, скажите «back» или «назад», или нажмите кнопку «Назад». Программа повторит этот урок с начала.</p>
     <p><b>Кнопка «Copy this to my Grok agent».</b></p>
     <p>1. Нажмите эту кнопку на главной странице.</p>
@@ -46,7 +50,8 @@
     <p>5. Нажмите «Вставить».</p>
     <p>6. Отправьте сообщение.</p>
     <p>Теперь ваш Grok знает вашу программу и будет помогать вам каждый день.</p>
-    <p><b>Сколько заниматься.</b> Учёные говорят: лучше заниматься понемногу, но каждый день, чем долго, но редко. Ваша цель — 30–40 минут в день: 15 минут утром, 10 минут в машине и 15 минут вечером. Если день очень занятой — хотя бы 10 минут. Главное — не пропускать ни одного дня.</p>
+    <p><b>«Открыть программу»</b> открывает эту страницу. <b>«Копировать»</b> копирует короткую ссылку для Grok.</p>
+    <p><b>Сколько заниматься.</b> Учёные говорят: лучше заниматься понемногу, но каждый день, чем долго, но редко. Урок короткий, минут на 10–15: нажмите «Нажмите, чтобы начать», когда вам удобно. В конце можно повторить тот же урок или взять другой. Главное — не пропускать ни одного дня.</p>
     <p><b>Самое важное:</b> вам нужны люди, которые говорят с вами по-английски. Попросите Криса, друзей и коллег говорить с вами только по-английски — хотя бы немного каждый день. Не бойтесь ошибок: каждый разговор делает ваш английский лучше. У вас всё получится!</p>
   </div>
   <button class="big ghost" data-nav="home" type="button">На главную</button>
@@ -70,6 +75,15 @@
   <button class="ctl stop" id="carStop" type="button">Стоп</button>
 </section>
 
+<section id="finish" class="screen">
+  <h2>Урок закончен</h2>
+  <p class="count" id="finishInfo"></p>
+  <p class="sub">Можно повторить этот урок или взять другой.</p>
+  <button type="button" class="big" id="btnRepeat">Повторить урок</button>
+  <button type="button" class="big" id="btnAnother">Другой урок</button>
+  <button type="button" class="big ghost" id="btnFinishHome">Домой</button>
+</section>
+
 <section id="progress" class="screen">
   <h2>Мой прогресс</h2>
   <div id="progList"></div>
@@ -77,7 +91,7 @@
 </section>
 
 </div>
-<script src="compare.js?v=202611151550"></script>
-<script src="copy-text.js?v=202611151550"></script>
-<script src="app.js?v=202611151550"></script>
+<script src="compare.js?v=202611151700"></script>
+<script src="copy-text.js?v=202611151700"></script>
+<script src="app.js?v=202611151700"></script>
 </body></html>
