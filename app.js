@@ -3,6 +3,17 @@
 const $=id=>document.getElementById(id);
 let D=null; const LS=localStorage;
 const S={get:(k,d)=>{try{return JSON.parse(LS.getItem('ns_'+k))??d}catch(e){return d}},set:(k,v)=>LS.setItem('ns_'+k,JSON.stringify(v))};
+/* Daily streak is its own key, separate from ns_* progress. Local calendar days. */
+const STREAK_KEY='natalia_daily_streak';
+function localISODate(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+function addCalendarDays(iso,delta){const [y,m,day]=iso.split('-').map(Number);const dt=new Date(y,m-1,day);dt.setDate(dt.getDate()+delta);return localISODate(dt);}
+function ruDayWord(n){const a=Math.abs(Math.trunc(n))%100,b=a%10;if(a>=11&&a<=14)return 'дней';if(b===1)return 'день';if(b>=2&&b<=4)return 'дня';return 'дней';}
+function readStreak(){try{const v=JSON.parse(LS.getItem(STREAK_KEY)||'null');if(v&&typeof v.count==='number'&&typeof v.last==='string')return {count:v.count,last:v.last};}catch(e){}return {count:0,last:''};}
+function writeStreak(v){try{LS.setItem(STREAK_KEY,JSON.stringify(v));}catch(e){}}
+function shownStreak(){const s=readStreak();if(!s.last||s.count<1)return 0;const today=localISODate(new Date());if(s.last===today||s.last===addCalendarDays(today,-1))return s.count;return 0;}
+function renderStreak(){const el=$('streak');if(!el)return;const n=shownStreak();el.textContent='🔥 '+n+' '+ruDayWord(n)+' подряд';}
+function recordStreak(){const today=localISODate(new Date());const s=readStreak();if(s.last===today&&s.count>0){renderStreak();return;}
+  const count=(s.last===addCalendarDays(today,-1)&&s.count>0)?s.count+1:1;writeStreak({count:count,last:today});renderStreak();}
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const player=new Audio(); player.preload='auto';
 let stopFlag=false, runId=0;
@@ -44,26 +55,42 @@ function sessionFor(kind,lessonId){
   if(kind==='busy'){let it=weakItems(4).concat(dueItems(4));const l=lessonById(nextLessonId());it=it.concat(l.items.slice(0,8-it.length));
     return {kind,title:'Занятой день: 10 минут',items:[...new Set(it.map(i=>i.id))].slice(0,10)};}
 }
+/* One pass: Russian prompt (about as long as the English line) + gap + English + the car-mode repeat window. */
+function exposureSeconds(dur){const en=dur>0?dur:3;return en+0.5+en+Math.max(2.5,en*1.5);}
+function repeatsFor(items){let base=0;for(const id of items){const it=itemById(id);base+=exposureSeconds(it&&it.dur);}
+  const overhead=2.2+4.5+7.6+12;let best=1,score=1e9,fallback=1,fall=1e9;
+  for(let k=1;k<=12;k++){const t=overhead+k*base,diff=Math.abs(t-12.5*60);if(diff<fall){fall=diff;fallback=k;}
+    if(t<10*60||t>15*60)continue;if(diff<score){score=diff;best=k;}}
+  return score<1e9?best:fallback;}
+function sizedLesson(lessonId){const sess=sessionFor('lesson',lessonId);sess.reps=repeatsFor(sess.items);return sess;}
+function anotherLessonId(id){const i=D.lessons.findIndex(l=>l.id===id);return D.lessons[(i<0?0:i+1)%D.lessons.length].id;}
 const itemById=id=>allItems().find(i=>i.id===id);
 function saveState(mode,sess,idx){S.set('resume',{mode,sess,idx,t:Date.now()});}
 function clearState(){LS.removeItem('ns_resume');}
 function pushHistory(sess){if(sess.kind!=='lesson')return;const h=S.get('hist',[]);if(h[h.length-1]!==sess.lessonId)h.push(sess.lessonId);S.set('hist',h.slice(-30));}
 function previousLesson(currentId){const h=S.get('hist',[]);for(let i=h.length-1;i>=0;i--)if(h[i]!==currentId)return h[i];return currentId||h[h.length-1]||D.lessons[0].id;}
-function finishLesson(sess){if(sess.kind==='lesson'){const d=S.get('done',[]);if(!d.includes(sess.lessonId))d.push(sess.lessonId);else S.set('rot',S.get('rot',0)+1);S.set('done',d);}clearState();}
+function finishLesson(sess){recordStreak();if(sess.kind==='lesson'){const d=S.get('done',[]);if(!d.includes(sess.lessonId))d.push(sess.lessonId);else S.set('rot',S.get('rot',0)+1);S.set('done',d);}clearState();}
 
 /* ---------- Normal lesson (audio only, no lesson text on screen) ---------- */
-let L=null;
-async function startLesson(sess,idx=0){stopAll();L={sess,idx,run:++runId};pushHistory(sess);$('lessonTitle').textContent=sess.title;$('lessonCount').textContent=(idx+1)+' / '+sess.items.length;$('lessonBar').style.width=(100*idx/sess.items.length)+'%';$('lessonStatus').textContent='🔊';show('lesson');
+let L=null,finishSess=null;
+async function startLesson(sess,idx=0){recordStreak();stopAll();L={sess,idx,run:++runId,hold:false};pushHistory(sess);$('lessonTitle').textContent=sess.title;$('lessonCount').textContent=(idx+1)+' / '+sess.items.length;$('lessonBar').style.width=(100*idx/sess.items.length)+'%';$('lessonStatus').textContent='🔊';show('lesson');
   if(idx===0&&sess.topicAudio){await play(D.cues.listen_repeat);await play(sess.topicAudio);}else if(idx>0)await play(D.cues.resume);
   lessonStep();}
 async function lessonStep(){const my=L.run;const it=itemById(L.sess.items[L.idx]);saveState('lesson',L.sess,L.idx);
+  const reps=L.sess.reps||0;
   $('lessonCount').textContent=(L.idx+1)+' / '+L.sess.items.length;$('lessonBar').style.width=(100*L.idx/L.sess.items.length)+'%';
   $('lessonStatus').textContent='🔊';if(!it)return lessonDone();
+  if(reps>1){L.hold=true;
+    for(let r=0;r<reps;r++){$('lessonCount').textContent=(L.idx+1)+' / '+L.sess.items.length+' · повтор '+(r+1)+' / '+reps;$('lessonStatus').textContent='🔊';
+      await play(it.ruAudio);if(my!==runId)return;await sleep(500);await play(it.audio);if(my!==runId)return;
+      $('lessonStatus').textContent='🗣️';await sleep(Math.max(2500,(it.dur||3)*1500));if(my!==runId)return;}
+    L.hold=false;$('lessonStatus').textContent='🗣️';return;}
   await play(it.ruAudio);if(my!==runId)return;await sleep(500);await play(it.audio);if(my!==runId)return;
   $('lessonStatus').textContent='🗣️';}
-async function lessonAnswer(ok){if(!L)return;const it=itemById(L.sess.items[L.idx]);mark(it.id,ok);if(ok)await praise('line');L.idx++;
+async function lessonAnswer(ok){if(!L||L.hold)return;const it=itemById(L.sess.items[L.idx]);mark(it.id,ok);if(ok)await praise('line');L.idx++;
   if(L.idx>=L.sess.items.length)return lessonDone();lessonStep();}
-async function lessonDone(){$('lessonBar').style.width='100%';$('lessonStatus').textContent='🎉';finishLesson(L.sess);await praise('lesson');await play(D.cues.done);L=null;goHome();}
+function showFinish(sess){finishSess=sess;$('finishInfo').textContent=sess.title||'';show('finish');}
+async function lessonDone(){const sess=L.sess;$('lessonBar').style.width='100%';$('lessonStatus').textContent='🎉';finishLesson(sess);await praise('lesson');await play(D.cues.done);L=null;showFinish(sess);}
 
 /* ---------- Audio capture + VAD + Whisper ---------- */
 const MIC={stream:null,ctx:null,buf:[],rec:false,rms:0,noise:0.01,ok:false};
@@ -96,7 +123,7 @@ let C=null,wake=null;
 async function keepAwake(){try{if('wakeLock' in navigator)wake=await navigator.wakeLock.request('screen');}catch(e){}}
 document.addEventListener('visibilitychange',()=>{if(C&&document.visibilityState==='visible')keepAwake();});
 function setCar(status,heard){if(status!=null)$('carStatus').textContent=status;if(heard!=null)$('carHeard').textContent=heard;}
-async function startCar(sess,idx=0){stopAll();stopFlag=false;const my=++runId;C={sess,idx,run:my,paused:false,smart:false};pushHistory(sess);
+async function startCar(sess,idx=0){recordStreak();stopAll();stopFlag=false;const my=++runId;C={sess,idx,run:my,paused:false,smart:false};pushHistory(sess);
   $('carTitle').textContent=sess.title;$('carPause').textContent='⏸ Стоп';show('car');keepAwake();setCar('…','');
   const micOk=await micInit();let eng='Режим: повторяйте за голосом (без проверки).';
   if(micOk){$('carEngine').textContent='Загружаю проверку речи… (первый раз ~1 минута)';await asrInit();if(ASR){C.smart=true;eng='Проверка речи включена (работает на телефоне, без интернета).';}}
@@ -141,7 +168,7 @@ function releaseCar(){try{wake&&wake.release()}catch(e){}wake=null;C=null;}
 /* ---------- Common ---------- */
 function stopAll(){runId++;stopAudio();MIC.rec=false;}
 function goHome(){stopAll();if(C)releaseCar();L=null;refreshHome();show('home');}
-function refreshHome(){const r=S.get('resume',null);if(r&&r.sess){$('btnResume').classList.remove('hidden');$('resumeInfo').textContent=r.sess.title+' · '+(r.idx+1)+'/'+r.sess.items.length;}else $('btnResume').classList.add('hidden');}
+function refreshHome(){renderStreak();const r=S.get('resume',null);if(r&&r.sess){$('btnResume').classList.remove('hidden');$('resumeInfo').textContent=r.sess.title+' · '+(r.idx+1)+'/'+r.sess.items.length;}else $('btnResume').classList.add('hidden');}
 function renderTopics(){const box=$('topicList');box.innerHTML='';const done=S.get('done',[]);D.lessons.forEach(l=>{const b=document.createElement('button');b.className='topic';
   b.innerHTML=(done.includes(l.id)?'✓ ':'')+l.title+'<br><small>'+l.track+'</small>';b.onclick=()=>chooseMode(l.id);box.appendChild(b);});}
 function chooseMode(id){const car=confirm('Режим «В машине» (без рук)? OK = в машине, Отмена = обычный урок.');const s=sessionFor('lesson',id);car?startCar(s):startLesson(s);}
@@ -158,7 +185,10 @@ function renderProgress(){const r=S.get('srs',{});const ids=Object.keys(r);const
 async function init(){D=await (await fetch('data.json',{cache:'no-cache'})).json();
   $('introEn1').textContent=D.intro[0].en;$('introRu1').textContent=D.intro[0].ru;$('introEn2').textContent=D.intro[1].en;$('introRu2').textContent=D.intro[1].ru;
   $('btnIntro').onclick=async()=>{$('introText').classList.remove('hidden');stopAll();await play('intro_en.mp3');};
-  $('btnStart').onclick=()=>startLesson(sessionFor('lesson',nextLessonId()));
+  $('btnStart').onclick=()=>startLesson(sizedLesson(nextLessonId()));
+  $('btnRepeat').onclick=()=>{if(finishSess&&finishSess.lessonId)startLesson(sizedLesson(finishSess.lessonId));};
+  $('btnAnother').onclick=()=>{if(finishSess&&finishSess.lessonId)startLesson(sizedLesson(anotherLessonId(finishSess.lessonId)));};
+  $('btnFinishHome').onclick=goHome;
   $('btnCar').onclick=()=>{const r=S.get('resume',null);if(r&&r.mode==='car')startCar(r.sess,r.idx);else startCar(sessionFor('lesson',nextLessonId()));};
   $('btnWeak').onclick=$('btnWeak2').onclick=()=>startLesson(sessionFor('weak'));
   $('btnBusy').onclick=()=>startLesson(sessionFor('busy'));
@@ -169,11 +199,19 @@ async function init(){D=await (await fetch('data.json',{cache:'no-cache'})).json
   $('btnWeakScreen').onclick=()=>{renderWeak();show('weak');};
   $('btnTopics').onclick=()=>{renderTopics();show('topics');};
   document.querySelectorAll('[data-home]').forEach(b=>b.onclick=goHome);
-  $('lAgain').onclick=async()=>{if(!L)return;const it=itemById(L.sess.items[L.idx]);stopAudio();await play(it.audio);};
-  $('lGot').onclick=()=>{stopAudio();lessonAnswer(true);};$('lHard').onclick=()=>{stopAudio();lessonAnswer(false);};
+  $('lAgain').onclick=async()=>{if(!L||L.hold)return;const it=itemById(L.sess.items[L.idx]);stopAudio();await play(it.audio);};
+  $('lGot').onclick=()=>{if(L&&L.hold)return;stopAudio();lessonAnswer(true);};$('lHard').onclick=()=>{if(L&&L.hold)return;stopAudio();lessonAnswer(false);};
   $('lStop').onclick=async()=>{if(L)saveState('lesson',L.sess,L.idx);L=null;stopAll();refreshHome();show('home');await play(D.cues.paused);};
   $('lBack').onclick=async()=>{const cur=L&&L.sess.lessonId;stopAll();await play(D.cues.back);startLesson(sessionFor('lesson',previousLesson(cur)));};
   $('carPause').onclick=()=>carPause(false);$('carBack').onclick=carBack;$('carHome').onclick=goHome;
   refreshHome();}
+const COPY_TEXT='Скопируйте эту ссылку и вставьте в вашего агента Grok: https://chriscox2020.github.io/natalia-english/';
+let copyTimer=0;
+function fallbackCopy(text){const ta=$('copyFallback');if(!ta)return false;ta.value=text;try{ta.focus();ta.select();ta.setSelectionRange(0,text.length);return document.execCommand('copy');}catch(e){return false;}}
+$('btnCopy').addEventListener('click',async e=>{e.preventDefault();e.stopPropagation();let ok=false;
+  try{if(navigator.clipboard&&navigator.clipboard.writeText){await navigator.clipboard.writeText(COPY_TEXT);ok=true;}}catch(err){ok=false;}
+  if(!ok)ok=fallbackCopy(COPY_TEXT);const btn=$('btnCopy');if(!ok||!btn)return;btn.textContent='Скопировано';
+  clearTimeout(copyTimer);copyTimer=setTimeout(()=>{btn.textContent='Копировать';},2000);});
+renderStreak();
 init();
 })();

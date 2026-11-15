@@ -10,13 +10,17 @@
 <section id="home" class="screen active">
   <h1>Наталия Штефан</h1>
   <p class="sub">Ваша программа английского · Natalia Shtefan's English program</p>
+  <p class="streak" id="streak">🔥 0 дней подряд</p>
+  <a class="big" id="btnOpen" href="https://chriscox2020.github.io/natalia-english/">Открыть программу</a>
   <button class="big msg" id="btnIntro">▶ Сообщение для Наталии<br><small>Message for Natalia</small></button>
   <div id="introText" class="card hidden">
     <p class="en" id="introEn1"></p><p class="ru small" id="introRu1"></p>
     <p class="en" id="introEn2"></p><p class="ru small" id="introRu2"></p>
   </div>
   <button class="big resume hidden" id="btnResume">⏵ Продолжить<br><small id="resumeInfo"></small></button>
-  <button class="big" id="btnStart">Начать урок<br><small>Start lesson</small></button>
+  <button class="big" id="btnStart">Нажмите, чтобы начать<br><small>Start lesson</small></button>
+  <button type="button" class="copybtn" id="btnCopy">Копировать</button>
+  <textarea id="copyFallback" class="copy-fallback" readonly aria-hidden="true" tabindex="-1"></textarea>
   <button class="big car" id="btnCar">🚗 В машине<br><small>Car Mode</small></button>
   <button class="big" id="btnWeak">Тренировать слабые места<br><small>Drill my weak spots</small></button>
   <button class="big busy" id="btnBusy">Занятой день: 10 минут<br><small>Busy day: 10 min</small></button>
@@ -29,7 +33,7 @@
   <div class="card notes">
     <p><b>Стоп-слово.</b> В любой момент скажите «quiet» или «тихо». Программа остановится и запомнит, где вы остановились. Когда вернётесь, нажмите кнопку «Продолжить», и урок начнётся с того же места.</p>
     <p><b>Назад.</b> Чтобы вернуться к прошлому уроку, скажите «back» или «назад», или нажмите кнопку «Назад». Программа повторит этот урок с начала.</p>
-    <p><b>Сколько заниматься.</b> Учёные говорят: лучше заниматься понемногу, но каждый день, чем долго, но редко. Ваша цель — 30–40 минут в день: 15 минут утром, 10 минут в машине и 15 минут вечером. Если день очень занятой — хотя бы 10 минут. Главное — не пропускать ни одного дня.</p>
+    <p><b>Сколько заниматься.</b> Учёные говорят: лучше заниматься понемногу, но каждый день, чем долго, но редко. Урок короткий, минут на 10–15: нажмите «Нажмите, чтобы начать», когда вам удобно. В конце можно повторить тот же урок или взять другой. Главное — не пропускать ни одного дня.</p>
     <p><b>Самое важное:</b> вам нужны люди, которые говорят с вами по-английски. Попросите Криса, друзей и коллег говорить с вами только по-английски — хотя бы немного каждый день. Не бойтесь ошибок: каждый разговор делает ваш английский лучше. У вас всё получится!</p>
   </div>
 </section>
@@ -45,6 +49,15 @@
   <div class="row"><button class="big good" id="lGot">✓ Получилось<br><small>Got it</small></button>
   <button class="big hard" id="lHard">✗ Трудно<br><small>Hard</small></button></div>
   <div class="row"><button class="big ghost" id="lBack">⟲ Назад</button><button class="big ghost" id="lStop">■ Стоп</button></div>
+</section>
+<!-- FINISH -->
+<section id="finish" class="screen">
+  <h2>Урок закончен</h2>
+  <p class="count" id="finishInfo"></p>
+  <p class="sub">Можно повторить этот урок или взять другой.</p>
+  <button type="button" class="big" id="btnRepeat">Повторить урок<br><small>Same lesson</small></button>
+  <button type="button" class="big" id="btnAnother">Другой урок<br><small>Another lesson</small></button>
+  <button type="button" class="big ghost" id="btnFinishHome">⌂ Домой</button>
 </section>
 <!-- CAR -->
 <section id="car" class="screen">

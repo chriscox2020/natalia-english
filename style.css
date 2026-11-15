@@ -13,6 +13,9 @@ h1{font-size:30px;margin:8px 0 2px;text-align:center}h2{font-size:26px;text-alig
 .card{background:#fff;border-radius:16px;padding:14px 16px;margin:12px 0;box-shadow:0 1px 4px rgba(0,0,0,.08)}
 .card p{margin:8px 0;line-height:1.4}.en{font-size:22px;font-weight:600}.ru.small,.small{font-size:16px;color:#5a4f70}
 .notes p{font-size:17px}
+.streak{text-align:center;font-size:28px;font-weight:700;margin:2px 0 12px;color:#c2410c}
+.copybtn{display:block;width:100%;min-height:48px;margin:-2px 0 12px;border:2px solid #5b3cc4;border-radius:14px;background:#fff;color:#5b3cc4;font-size:18px;font-weight:600;padding:10px 14px;text-align:center;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.copy-fallback{position:fixed;left:-9999px;top:0;width:1px;height:1px;opacity:0}
 .progress{height:16px;background:#ddd;border-radius:8px;overflow:hidden;margin:10px 0}.progress div{height:100%;width:0;background:#2b8a3e;transition:width .4s}
 .count{text-align:center;font-size:22px;margin:4px 0}
 .speaker{text-align:center;font-size:60px;margin:20px 0;min-height:80px}
