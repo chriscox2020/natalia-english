@@ -2,81 +2,96 @@
 <html lang="ru"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Natalia Shtefan — English Program / Наталия Штефан — английский</title>
-<meta name="theme-color" content="#5b3cc4">
-<link rel="stylesheet" href="style.css">
+<meta name="theme-color" content="#006627">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<link rel="stylesheet" href="style.css?v=202611151700">
 </head><body>
 <div id="app">
-<!-- HOME -->
+
 <section id="home" class="screen active">
-  <h1>Наталия Штефан</h1>
-  <p class="sub">Ваша программа английского · Natalia Shtefan's English program</p>
+  <p class="name">Наталия Штефан</p>
   <p class="streak" id="streak">🔥 0 дней подряд</p>
   <a class="big" id="btnOpen" href="https://chriscox2020.github.io/natalia-english/">Открыть программу</a>
-  <button class="big msg" id="btnIntro">▶ Сообщение для Наталии<br><small>Message for Natalia</small></button>
-  <div id="introText" class="card hidden">
-    <p class="en" id="introEn1"></p><p class="ru small" id="introRu1"></p>
-    <p class="en" id="introEn2"></p><p class="ru small" id="introRu2"></p>
-  </div>
-  <button class="big resume hidden" id="btnResume">⏵ Продолжить<br><small id="resumeInfo"></small></button>
-  <button class="big" id="btnStart">Нажмите, чтобы начать<br><small>Start lesson</small></button>
+  <button class="huge-start" id="btnStart" type="button">Нажмите, чтобы начать<br><small>Start</small></button>
   <button type="button" class="copybtn" id="btnCopy">Копировать</button>
   <textarea id="copyFallback" class="copy-fallback" readonly aria-hidden="true" tabindex="-1"></textarea>
-  <button class="big car" id="btnCar">🚗 В машине<br><small>Car Mode</small></button>
-  <button class="big" id="btnWeak">Тренировать слабые места<br><small>Drill my weak spots</small></button>
-  <button class="big busy" id="btnBusy">Занятой день: 10 минут<br><small>Busy day: 10 min</small></button>
-  <button class="big back" id="btnBack">⟲ Назад<br><small>Back: previous lesson</small></button>
-  <button class="big" id="btnListen">▶ Слушать инструкцию<br><small>Listen to instructions</small></button>
+  <button class="copy-agent" id="btnCopyAgent" type="button">Copy this to my Grok agent<br><small>Скопировать для моего Grok</small></button>
+  <p id="copyStatus" class="copy-status hidden">Скопировано! Теперь вставьте в Grok.</p>
+  <div class="steps">
+    <p>1. Нажмите кнопку выше.</p>
+    <p>2. Откройте Grok.</p>
+    <p>3. Подержите палец в поле сообщения → «Вставить».</p>
+    <p>4. Отправьте.</p>
+  </div>
+  <button class="more-link" id="btnMore" type="button">Ещё</button>
+</section>
+
+<section id="more" class="screen">
+  <p class="name">Ещё</p>
+  <button class="big" id="btnIntro" type="button">Сообщение для Наталии</button>
+  <div id="introText" class="card hidden">
+    <p class="en" id="introEn1"></p><p class="ru" id="introRu1"></p>
+    <p class="en" id="introEn2"></p><p class="ru" id="introRu2"></p>
+  </div>
+  <button class="big" id="btnListen" type="button">Слушать инструкцию</button>
   <audio id="instrAudio" src="Natalia_Shtefan_Instructions_RU.mp3" preload="none" controls class="hidden"></audio>
-  <a class="big link" href="Natalia_Shtefan_Instructions_RU.pdf" target="_blank">📄 Инструкция PDF<br><small>Download PDF</small></a>
-  <button class="big" id="btnProgress">Мой прогресс<br><small>My progress</small></button>
-  <button class="big" id="btnTopics">Все темы<br><small>All topics</small></button>
+  <a class="big link" href="Natalia_Shtefan_Instructions_RU.pdf" target="_blank" rel="noopener">Инструкция PDF</a>
+  <button class="big" id="btnProgress" type="button">Мой прогресс</button>
+  <button class="big" id="btnTopics" type="button">Все темы</button>
   <div class="card notes">
-    <p><b>Стоп-слово.</b> В любой момент скажите «quiet» или «тихо». Программа остановится и запомнит, где вы остановились. Когда вернётесь, нажмите кнопку «Продолжить», и урок начнётся с того же места.</p>
+    <p><b>Стоп-слово.</b> В любой момент скажите «quiet» или «тихо». Программа остановится и запомнит, где вы остановились. Когда вернётесь, нажмите большую зелёную кнопку «Нажмите, чтобы начать», и урок продолжится с того же места.</p>
     <p><b>Назад.</b> Чтобы вернуться к прошлому уроку, скажите «back» или «назад», или нажмите кнопку «Назад». Программа повторит этот урок с начала.</p>
+    <p><b>Кнопка «Copy this to my Grok agent».</b></p>
+    <p>1. Нажмите эту кнопку на главной странице.</p>
+    <p>2. Текст скопируется сам. Вы услышите: «Скопировано!»</p>
+    <p>3. Откройте свой Grok на телефоне.</p>
+    <p>4. Нажмите и подержите палец в поле для сообщения.</p>
+    <p>5. Нажмите «Вставить».</p>
+    <p>6. Отправьте сообщение.</p>
+    <p>Теперь ваш Grok знает вашу программу и будет помогать вам каждый день.</p>
+    <p><b>«Открыть программу»</b> открывает эту страницу. <b>«Копировать»</b> копирует короткую ссылку для Grok.</p>
     <p><b>Сколько заниматься.</b> Учёные говорят: лучше заниматься понемногу, но каждый день, чем долго, но редко. Урок короткий, минут на 10–15: нажмите «Нажмите, чтобы начать», когда вам удобно. В конце можно повторить тот же урок или взять другой. Главное — не пропускать ни одного дня.</p>
     <p><b>Самое важное:</b> вам нужны люди, которые говорят с вами по-английски. Попросите Криса, друзей и коллег говорить с вами только по-английски — хотя бы немного каждый день. Не бойтесь ошибок: каждый разговор делает ваш английский лучше. У вас всё получится!</p>
   </div>
+  <button class="big ghost" data-nav="home" type="button">На главную</button>
 </section>
-<!-- TOPICS -->
-<section id="topics" class="screen"><h2>Темы</h2><div id="topicList"></div><button class="big ghost" data-home>⌂ Домой</button></section>
-<!-- LESSON (audio only) -->
-<section id="lesson" class="screen">
-  <h2 id="lessonTitle"></h2>
-  <div class="progress"><div id="lessonBar"></div></div>
-  <p class="count" id="lessonCount"></p>
-  <div class="speaker" id="lessonStatus">🔊</div>
-  <button class="big" id="lAgain">↻ Ещё раз<br><small>Again</small></button>
-  <div class="row"><button class="big good" id="lGot">✓ Получилось<br><small>Got it</small></button>
-  <button class="big hard" id="lHard">✗ Трудно<br><small>Hard</small></button></div>
-  <div class="row"><button class="big ghost" id="lBack">⟲ Назад</button><button class="big ghost" id="lStop">■ Стоп</button></div>
+
+<section id="topics" class="screen">
+  <h2>Темы</h2>
+  <div id="topicList"></div>
+  <button class="big ghost" data-nav="more" type="button">Назад</button>
 </section>
-<!-- FINISH -->
+
+<section id="car" class="screen">
+  <p class="warn">Только если вы пассажир или телефон работает без рук. Смотрите на дорогу.</p>
+  <h2 id="carTitle"></h2>
+  <div class="progress"><div id="carBar"></div></div>
+  <p class="count" id="carCount"></p>
+  <p class="status" id="carStatus"></p>
+  <p class="heard" id="carHeard"></p>
+  <p class="engine" id="carEngine"></p>
+  <button class="ctl back" id="carBack" type="button">Назад</button>
+  <button class="ctl stop" id="carStop" type="button">Стоп</button>
+</section>
+
 <section id="finish" class="screen">
   <h2>Урок закончен</h2>
   <p class="count" id="finishInfo"></p>
   <p class="sub">Можно повторить этот урок или взять другой.</p>
-  <button type="button" class="big" id="btnRepeat">Повторить урок<br><small>Same lesson</small></button>
-  <button type="button" class="big" id="btnAnother">Другой урок<br><small>Another lesson</small></button>
-  <button type="button" class="big ghost" id="btnFinishHome">⌂ Домой</button>
+  <button type="button" class="big" id="btnRepeat">Повторить урок</button>
+  <button type="button" class="big" id="btnAnother">Другой урок</button>
+  <button type="button" class="big ghost" id="btnFinishHome">Домой</button>
 </section>
-<!-- CAR -->
-<section id="car" class="screen">
-  <p class="warn">Только если вы пассажир или телефон работает без рук. Смотрите на дорогу, а не на экран!</p>
-  <h2 id="carTitle"></h2>
-  <div class="progress"><div id="carBar"></div></div>
-  <p class="count" id="carCount"></p>
-  <div class="speaker" id="carStatus">…</div>
-  <p class="heard" id="carHeard"></p>
-  <button class="huge" id="carPause">⏸ Стоп</button>
-  <div class="row"><button class="big ghost" id="carBack">⟲ Назад</button><button class="big ghost" id="carHome">⌂ Домой</button></div>
-  <p class="small" id="carEngine"></p>
+
+<section id="progress" class="screen">
+  <h2>Мой прогресс</h2>
+  <div id="progList"></div>
+  <button class="big ghost" data-nav="more" type="button">Назад</button>
 </section>
-<!-- WEAK / PROGRESS -->
-<section id="weak" class="screen"><h2>Мои слабые места</h2><p class="small">My weak spots</p><div id="weakList"></div>
-  <button class="big" id="btnWeak2">Тренировать слабые места</button><button class="big ghost" data-home>⌂ Домой</button></section>
-<section id="progress" class="screen"><h2>Мой прогресс</h2><div id="progList"></div>
-  <button class="big" id="btnWeakScreen">Мои слабые места</button><button class="big ghost" data-home>⌂ Домой</button></section>
+
 </div>
-<script src="compare.js"></script>
-<script src="app.js"></script>
+<script src="compare.js?v=202611151700"></script>
+<script src="copy-text.js?v=202611151700"></script>
+<script src="app.js?v=202611151700"></script>
 </body></html>
