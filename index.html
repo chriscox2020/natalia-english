@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Natalia Shtefan — English Program / Наталия Штефан — английский</title>
+<meta name="theme-color" content="#5b3cc4">
+<link rel="stylesheet" href="style.css">
+</head><body>
+<div id="app">
+<!-- HOME -->
+<section id="home" class="screen active">
+  <h1>Наталия Штефан</h1>
+  <p class="sub">Ваша программа английского · Natalia Shtefan's English program</p>
+  <button class="big msg" id="btnIntro">▶ Сообщение для Наталии<br><small>Message for Natalia</small></button>
+  <div id="introText" class="card hidden">
+    <p class="en" id="introEn1"></p><p class="ru small" id="introRu1"></p>
+    <p class="en" id="introEn2"></p><p class="ru small" id="introRu2"></p>
+  </div>
+  <button class="big resume hidden" id="btnResume">⏵ Продолжить<br><small id="resumeInfo"></small></button>
+  <button class="big" id="btnStart">Начать урок<br><small>Start lesson</small></button>
+  <button class="big car" id="btnCar">🚗 В машине<br><small>Car Mode</small></button>
+  <button class="big" id="btnWeak">Тренировать слабые места<br><small>Drill my weak spots</small></button>
+  <button class="big busy" id="btnBusy">Занятой день: 10 минут<br><small>Busy day: 10 min</small></button>
+  <button class="big back" id="btnBack">⟲ Назад<br><small>Back: previous lesson</small></button>
+  <button class="big" id="btnListen">▶ Слушать инструкцию<br><small>Listen to instructions</small></button>
+  <audio id="instrAudio" src="Natalia_Shtefan_Instructions_RU.mp3" preload="none" controls class="hidden"></audio>
+  <a class="big link" href="Natalia_Shtefan_Instructions_RU.pdf" target="_blank">📄 Инструкция PDF<br><small>Download PDF</small></a>
+  <button class="big" id="btnProgress">Мой прогресс<br><small>My progress</small></button>
+  <button class="big" id="btnTopics">Все темы<br><small>All topics</small></button>
+  <div class="card notes">
+    <p><b>Стоп-слово.</b> В любой момент скажите «quiet» или «тихо». Программа остановится и запомнит, где вы остановились. Когда вернётесь, нажмите кнопку «Продолжить», и урок начнётся с того же места.</p>
+    <p><b>Назад.</b> Чтобы вернуться к прошлому уроку, скажите «back» или «назад», или нажмите кнопку «Назад». Программа повторит этот урок с начала.</p>
+    <p><b>Сколько заниматься.</b> Учёные говорят: лучше заниматься понемногу, но каждый день, чем долго, но редко. Ваша цель — 30–40 минут в день: 15 минут утром, 10 минут в машине и 15 минут вечером. Если день очень занятой — хотя бы 10 минут. Главное — не пропускать ни одного дня.</p>
+    <p><b>Самое важное:</b> вам нужны люди, которые говорят с вами по-английски. Попросите Криса, друзей и коллег говорить с вами только по-английски — хотя бы немного каждый день. Не бойтесь ошибок: каждый разговор делает ваш английский лучше. У вас всё получится!</p>
+  </div>
+</section>
+<!-- TOPICS -->
+<section id="topics" class="screen"><h2>Темы</h2><div id="topicList"></div><button class="big ghost" data-home>⌂ Домой</button></section>
+<!-- LESSON (audio only) -->
+<section id="lesson" class="screen">
+  <h2 id="lessonTitle"></h2>
+  <div class="progress"><div id="lessonBar"></div></div>
+  <p class="count" id="lessonCount"></p>
+  <div class="speaker" id="lessonStatus">🔊</div>
+  <button class="big" id="lAgain">↻ Ещё раз<br><small>Again</small></button>
+  <div class="row"><button class="big good" id="lGot">✓ Получилось<br><small>Got it</small></button>
+  <button class="big hard" id="lHard">✗ Трудно<br><small>Hard</small></button></div>
+  <div class="row"><button class="big ghost" id="lBack">⟲ Назад</button><button class="big ghost" id="lStop">■ Стоп</button></div>
+</section>
+<!-- CAR -->
+<section id="car" class="screen">
+  <p class="warn">Только если вы пассажир или телефон работает без рук. Смотрите на дорогу, а не на экран!</p>
+  <h2 id="carTitle"></h2>
+  <div class="progress"><div id="carBar"></div></div>
+  <p class="count" id="carCount"></p>
+  <div class="speaker" id="carStatus">…</div>
+  <p class="heard" id="carHeard"></p>
+  <button class="huge" id="carPause">⏸ Стоп</button>
+  <div class="row"><button class="big ghost" id="carBack">⟲ Назад</button><button class="big ghost" id="carHome">⌂ Домой</button></div>
+  <p class="small" id="carEngine"></p>
+</section>
+<!-- WEAK / PROGRESS -->
+<section id="weak" class="screen"><h2>Мои слабые места</h2><p class="small">My weak spots</p><div id="weakList"></div>
+  <button class="big" id="btnWeak2">Тренировать слабые места</button><button class="big ghost" data-home>⌂ Домой</button></section>
+<section id="progress" class="screen"><h2>Мой прогресс</h2><div id="progList"></div>
+  <button class="big" id="btnWeakScreen">Мои слабые места</button><button class="big ghost" data-home>⌂ Домой</button></section>
+</div>
+<script src="compare.js"></script>
+<script src="app.js"></script>
+</body></html>

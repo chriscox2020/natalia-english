@@ -1,0 +1,23 @@
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,system-ui,"Segoe UI",Roboto,Arial,sans-serif;background:#f4f1fb;color:#1d1530;font-size:20px}
+#app{max-width:560px;margin:0 auto;padding:16px 14px 60px}
+h1{font-size:30px;margin:8px 0 2px;text-align:center}h2{font-size:26px;text-align:center;margin:10px 0}
+.sub{text-align:center;color:#5a4f70;margin:0 0 14px;font-size:17px}
+.screen{display:none}.screen.active{display:block}.hidden{display:none!important}
+.big,.huge{display:block;width:100%;min-height:64px;margin:10px 0;border:0;border-radius:18px;background:#5b3cc4;color:#fff;font-size:22px;font-weight:600;padding:14px;text-align:center;text-decoration:none;cursor:pointer;line-height:1.25;-webkit-tap-highlight-color:transparent}
+.big small{font-weight:400;font-size:15px;opacity:.85}
+.huge{min-height:120px;font-size:34px;background:#d9480f}
+.msg{background:#c2255c}.car{background:#1971c2}.resume{background:#2b8a3e}.busy{background:#e67700}.back{background:#495057}
+.good{background:#2b8a3e}.hard{background:#c92a2a}.ghost{background:#fff;color:#5b3cc4;border:2px solid #5b3cc4}
+.link{background:#7048e8}
+.row{display:flex;gap:10px}.row>*{flex:1}
+.card{background:#fff;border-radius:16px;padding:14px 16px;margin:12px 0;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.card p{margin:8px 0;line-height:1.4}.en{font-size:22px;font-weight:600}.ru.small,.small{font-size:16px;color:#5a4f70}
+.notes p{font-size:17px}
+.progress{height:16px;background:#ddd;border-radius:8px;overflow:hidden;margin:10px 0}.progress div{height:100%;width:0;background:#2b8a3e;transition:width .4s}
+.count{text-align:center;font-size:22px;margin:4px 0}
+.speaker{text-align:center;font-size:60px;margin:20px 0;min-height:80px}
+.heard{text-align:center;font-size:30px;font-weight:700;min-height:44px;color:#1971c2}
+.warn{background:#fff3bf;border:2px solid #f08c00;border-radius:12px;padding:10px;font-size:18px;text-align:center;font-weight:600}
+.topic{display:block;width:100%;min-height:60px;margin:8px 0;border-radius:14px;border:2px solid #5b3cc4;background:#fff;color:#1d1530;font-size:19px;padding:10px;text-align:left}
+.topic small{color:#5a4f70}
+.wk{background:#fff;border-radius:12px;padding:10px 12px;margin:8px 0;font-size:18px}

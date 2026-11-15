@@ -1,0 +1,1308 @@
+{
+ "intro": [
+  {
+   "en": "Hi Natalia, I'm Chris's AI, and I created this quick program for you, and I took every learning tool there is on the web, and I created this specifically for you.",
+   "ru": "Привет, Наталия! Я — AI Криса. Я сделал для вас эту программу. Я собрал все способы учить язык, которые есть в интернете, и сделал программу специально для вас."
+  },
+  {
+   "en": "Chris really cares about you, Natalia, and he wants to do everything he can to help you succeed.",
+   "ru": "Крис очень заботится о вас, Наталия, и хочет сделать всё, чтобы у вас всё получилось."
+  }
+ ],
+ "cues": {
+  "praise1": "audio/ru/praise1.mp3",
+  "praise2": "audio/ru/praise2.mp3",
+  "praise3": "audio/ru/praise3.mp3",
+  "almost": "audio/ru/almost.mp3",
+  "unclear": "audio/ru/unclear.mp3",
+  "sayword": "audio/ru/sayword.mp3",
+  "again": "audio/ru/again.mp3",
+  "good_word": "audio/ru/good_word.mp3",
+  "full_again": "audio/ru/full_again.mp3",
+  "move_on": "audio/ru/move_on.mp3",
+  "gentle": "audio/ru/gentle.mp3",
+  "listen_repeat": "audio/ru/listen_repeat.mp3",
+  "done": "audio/ru/done.mp3",
+  "paused": "audio/ru/paused.mp3",
+  "start": "audio/ru/start.mp3",
+  "back": "audio/ru/back.mp3",
+  "resume": "audio/ru/resume.mp3"
+ },
+ "lessons": [
+  {
+   "id": "life_home",
+   "track": "Ваши разговоры",
+   "title": "Дом и ужин с Крисом",
+   "ru": "Тема: дом, ужин, разговор с Крисом.",
+   "topicAudio": "audio/ru/topic_life_home.mp3",
+   "items": [
+    {
+     "id": "life_home_0",
+     "en": "Chris, what time is dinner?",
+     "ru": "Крис, во сколько ужин?",
+     "audio": "audio/lines/life_home_0.mp3",
+     "dur": 2.59,
+     "ruAudio": "audio/ru_lines/life_home_0.mp3"
+    },
+    {
+     "id": "life_home_1",
+     "en": "Let's eat outside tonight, Chris.",
+     "ru": "Давай сегодня поужинаем на улице, Крис.",
+     "audio": "audio/lines/life_home_1.mp3",
+     "dur": 3.53,
+     "ruAudio": "audio/ru_lines/life_home_1.mp3"
+    },
+    {
+     "id": "life_home_2",
+     "en": "I love eating outside when the weather is nice.",
+     "ru": "Я люблю есть на улице, когда хорошая погода.",
+     "audio": "audio/lines/life_home_2.mp3",
+     "dur": 3.92,
+     "ruAudio": "audio/ru_lines/life_home_2.mp3"
+    },
+    {
+     "id": "life_home_3",
+     "en": "Chris, can you help me in the kitchen?",
+     "ru": "Крис, можешь помочь мне на кухне?",
+     "audio": "audio/lines/life_home_3.mp3",
+     "dur": 2.77,
+     "ruAudio": "audio/ru_lines/life_home_3.mp3"
+    },
+    {
+     "id": "life_home_4",
+     "en": "I'm cooking chicken and rice for us.",
+     "ru": "Я готовлю нам курицу с рисом.",
+     "audio": "audio/lines/life_home_4.mp3",
+     "dur": 3.11,
+     "ruAudio": "audio/ru_lines/life_home_4.mp3"
+    },
+    {
+     "id": "life_home_5",
+     "en": "The house looks beautiful today.",
+     "ru": "Дом сегодня выглядит красиво.",
+     "audio": "audio/lines/life_home_5.mp3",
+     "dur": 2.64,
+     "ruAudio": "audio/ru_lines/life_home_5.mp3"
+    },
+    {
+     "id": "life_home_6",
+     "en": "Chris, can you explain this word?",
+     "ru": "Крис, можешь объяснить это слово?",
+     "audio": "audio/lines/life_home_6.mp3",
+     "dur": 2.69,
+     "ruAudio": "audio/ru_lines/life_home_6.mp3"
+    },
+    {
+     "id": "life_home_7",
+     "en": "Thank you, Chris. Dinner was delicious.",
+     "ru": "Спасибо, Крис. Ужин был очень вкусный.",
+     "audio": "audio/lines/life_home_7.mp3",
+     "dur": 3.79,
+     "ruAudio": "audio/ru_lines/life_home_7.mp3"
+    }
+   ]
+  },
+  {
+   "id": "life_weather",
+   "track": "Ваши разговоры",
+   "title": "Погода и звездопад",
+   "ru": "Тема: погода, жара, звездопад.",
+   "topicAudio": "audio/ru/topic_life_weather.mp3",
+   "items": [
+    {
+     "id": "life_weather_0",
+     "en": "Chris, it's so hot today!",
+     "ru": "Крис, сегодня так жарко!",
+     "audio": "audio/lines/life_weather_0.mp3",
+     "dur": 2.43,
+     "ruAudio": "audio/ru_lines/life_weather_0.mp3"
+    },
+    {
+     "id": "life_weather_1",
+     "en": "It's ninety degrees outside.",
+     "ru": "На улице девяносто градусов.",
+     "audio": "audio/lines/life_weather_1.mp3",
+     "dur": 2.64,
+     "ruAudio": "audio/ru_lines/life_weather_1.mp3"
+    },
+    {
+     "id": "life_weather_2",
+     "en": "What is the temperature tomorrow?",
+     "ru": "Какая температура завтра?",
+     "audio": "audio/lines/life_weather_2.mp3",
+     "dur": 2.38,
+     "ruAudio": "audio/ru_lines/life_weather_2.mp3"
+    },
+    {
+     "id": "life_weather_3",
+     "en": "It's cold in the morning and warm in the afternoon.",
+     "ru": "Утром холодно, а днём тепло.",
+     "audio": "audio/lines/life_weather_3.mp3",
+     "dur": 4.05,
+     "ruAudio": "audio/ru_lines/life_weather_3.mp3"
+    },
+    {
+     "id": "life_weather_4",
+     "en": "Tonight there is a meteor shower.",
+     "ru": "Сегодня ночью звездопад.",
+     "audio": "audio/lines/life_weather_4.mp3",
+     "dur": 2.66,
+     "ruAudio": "audio/ru_lines/life_weather_4.mp3"
+    },
+    {
+     "id": "life_weather_5",
+     "en": "Chris, let's go outside and watch the stars.",
+     "ru": "Крис, пойдём на улицу смотреть на звёзды.",
+     "audio": "audio/lines/life_weather_5.mp3",
+     "dur": 4.05,
+     "ruAudio": "audio/ru_lines/life_weather_5.mp3"
+    },
+    {
+     "id": "life_weather_6",
+     "en": "It's late, but I want to see it.",
+     "ru": "Уже поздно, но я хочу это увидеть.",
+     "audio": "audio/lines/life_weather_6.mp3",
+     "dur": 3.19,
+     "ruAudio": "audio/ru_lines/life_weather_6.mp3"
+    },
+    {
+     "id": "life_weather_7",
+     "en": "I saw a shooting star!",
+     "ru": "Я видела падающую звезду!",
+     "audio": "audio/lines/life_weather_7.mp3",
+     "dur": 2.06,
+     "ruAudio": "audio/ru_lines/life_weather_7.mp3"
+    }
+   ]
+  },
+  {
+   "id": "life_cars",
+   "track": "Ваши разговоры",
+   "title": "Машины и поездка в Новый Орлеан",
+   "ru": "Тема: машины, дорога, поездка.",
+   "topicAudio": "audio/ru/topic_life_cars.mp3",
+   "items": [
+    {
+     "id": "life_cars_0",
+     "en": "I'm driving to New Orleans with Chris this weekend.",
+     "ru": "В эти выходные я еду с Крисом в Новый Орлеан.",
+     "audio": "audio/lines/life_cars_0.mp3",
+     "dur": 4.1,
+     "ruAudio": "audio/ru_lines/life_cars_0.mp3"
+    },
+    {
+     "id": "life_cars_1",
+     "en": "I was driving, and Chris was in the passenger seat.",
+     "ru": "Я была за рулём, а Крис сидел рядом.",
+     "audio": "audio/lines/life_cars_1.mp3",
+     "dur": 4.02,
+     "ruAudio": "audio/ru_lines/life_cars_1.mp3"
+    },
+    {
+     "id": "life_cars_2",
+     "en": "Chris has a Tundra and a Cybertruck.",
+     "ru": "У Криса есть Tundra и Cybertruck.",
+     "audio": "audio/lines/life_cars_2.mp3",
+     "dur": 3.08,
+     "ruAudio": "audio/ru_lines/life_cars_2.mp3"
+    },
+    {
+     "id": "life_cars_3",
+     "en": "The car can drive by itself. It's called self-driving.",
+     "ru": "Машина может ехать сама. Это называется автопилот.",
+     "audio": "audio/lines/life_cars_3.mp3",
+     "dur": 5.04,
+     "ruAudio": "audio/ru_lines/life_cars_3.mp3"
+    },
+    {
+     "id": "life_cars_4",
+     "en": "How long is the drive?",
+     "ru": "Сколько ехать?",
+     "audio": "audio/lines/life_cars_4.mp3",
+     "dur": 2.12,
+     "ruAudio": "audio/ru_lines/life_cars_4.mp3"
+    },
+    {
+     "id": "life_cars_5",
+     "en": "We need to stop for gas.",
+     "ru": "Нам нужно заправиться.",
+     "audio": "audio/lines/life_cars_5.mp3",
+     "dur": 2.46,
+     "ruAudio": "audio/ru_lines/life_cars_5.mp3"
+    },
+    {
+     "id": "life_cars_6",
+     "en": "There is a lot of traffic today.",
+     "ru": "Сегодня много пробок.",
+     "audio": "audio/lines/life_cars_6.mp3",
+     "dur": 2.59,
+     "ruAudio": "audio/ru_lines/life_cars_6.mp3"
+    },
+    {
+     "id": "life_cars_7",
+     "en": "Chris, turn left at the next light.",
+     "ru": "Крис, поверни налево на следующем светофоре.",
+     "audio": "audio/lines/life_cars_7.mp3",
+     "dur": 3.29,
+     "ruAudio": "audio/ru_lines/life_cars_7.mp3"
+    }
+   ]
+  },
+  {
+   "id": "life_miami",
+   "track": "Ваши разговоры",
+   "title": "Покупки, Майами, праздники",
+   "ru": "Тема: покупки, поездка в Майами, Хэллоуин.",
+   "topicAudio": "audio/ru/topic_life_miami.mp3",
+   "items": [
+    {
+     "id": "life_miami_0",
+     "en": "I need a new dress for our trip to Miami.",
+     "ru": "Мне нужно новое платье для поездки в Майами.",
+     "audio": "audio/lines/life_miami_0.mp3",
+     "dur": 3.74,
+     "ruAudio": "audio/ru_lines/life_miami_0.mp3"
+    },
+    {
+     "id": "life_miami_1",
+     "en": "Do you have this in a smaller size?",
+     "ru": "У вас есть такое на размер меньше?",
+     "audio": "audio/lines/life_miami_1.mp3",
+     "dur": 2.69,
+     "ruAudio": "audio/ru_lines/life_miami_1.mp3"
+    },
+    {
+     "id": "life_miami_2",
+     "en": "Can I try it on?",
+     "ru": "Можно примерить?",
+     "audio": "audio/lines/life_miami_2.mp3",
+     "dur": 1.65,
+     "ruAudio": "audio/ru_lines/life_miami_2.mp3"
+    },
+    {
+     "id": "life_miami_3",
+     "en": "Chris, which dress do you like better?",
+     "ru": "Крис, какое платье тебе больше нравится?",
+     "audio": "audio/lines/life_miami_3.mp3",
+     "dur": 3.13,
+     "ruAudio": "audio/ru_lines/life_miami_3.mp3"
+    },
+    {
+     "id": "life_miami_4",
+     "en": "I saw it on Instagram.",
+     "ru": "Я видела это в Инстаграме.",
+     "audio": "audio/lines/life_miami_4.mp3",
+     "dur": 2.72,
+     "ruAudio": "audio/ru_lines/life_miami_4.mp3"
+    },
+    {
+     "id": "life_miami_5",
+     "en": "Happy Halloween, everyone!",
+     "ru": "С Хэллоуином всех!",
+     "audio": "audio/lines/life_miami_5.mp3",
+     "dur": 2.51,
+     "ruAudio": "audio/ru_lines/life_miami_5.mp3"
+    },
+    {
+     "id": "life_miami_6",
+     "en": "Chris, I'm learning English with an AI tutor.",
+     "ru": "Крис, я учу английский с AI-репетитором.",
+     "audio": "audio/lines/life_miami_6.mp3",
+     "dur": 3.58,
+     "ruAudio": "audio/ru_lines/life_miami_6.mp3"
+    },
+    {
+     "id": "life_miami_7",
+     "en": "Chris helped me practice my English today.",
+     "ru": "Крис сегодня помог мне практиковать английский.",
+     "audio": "audio/lines/life_miami_7.mp3",
+     "dur": 3.53,
+     "ruAudio": "audio/ru_lines/life_miami_7.mp3"
+    }
+   ]
+  },
+  {
+   "id": "dillards",
+   "track": "Работа",
+   "title": "Dillard's: покупатели",
+   "ru": "Тема: работа в Dillard's, разговор с покупателем.",
+   "topicAudio": "audio/ru/topic_dillards.mp3",
+   "items": [
+    {
+     "id": "dillards_0",
+     "en": "Hi, welcome to Dillard's! How can I help you today?",
+     "ru": "Здравствуйте, добро пожаловать в Dillard's! Чем могу помочь?",
+     "audio": "audio/lines/dillards_0.mp3",
+     "dur": 4.44,
+     "ruAudio": "audio/ru_lines/dillards_0.mp3"
+    },
+    {
+     "id": "dillards_1",
+     "en": "Are you looking for something special?",
+     "ru": "Вы ищете что-то особенное?",
+     "audio": "audio/lines/dillards_1.mp3",
+     "dur": 2.61,
+     "ruAudio": "audio/ru_lines/dillards_1.mp3"
+    },
+    {
+     "id": "dillards_2",
+     "en": "Is this a gift, or is it for you?",
+     "ru": "Это подарок или для вас?",
+     "audio": "audio/lines/dillards_2.mp3",
+     "dur": 2.64,
+     "ruAudio": "audio/ru_lines/dillards_2.mp3"
+    },
+    {
+     "id": "dillards_3",
+     "en": "Would you like to try this one?",
+     "ru": "Хотите попробовать вот этот?",
+     "audio": "audio/lines/dillards_3.mp3",
+     "dur": 2.17,
+     "ruAudio": "audio/ru_lines/dillards_3.mp3"
+    },
+    {
+     "id": "dillards_4",
+     "en": "This fragrance is light and fresh.",
+     "ru": "Этот аромат лёгкий и свежий.",
+     "audio": "audio/lines/dillards_4.mp3",
+     "dur": 3.08,
+     "ruAudio": "audio/ru_lines/dillards_4.mp3"
+    },
+    {
+     "id": "dillards_5",
+     "en": "This one is a little stronger. It's warm and sweet.",
+     "ru": "Этот немного сильнее. Он тёплый и сладкий.",
+     "audio": "audio/lines/dillards_5.mp3",
+     "dur": 4.68,
+     "ruAudio": "audio/ru_lines/dillards_5.mp3"
+    },
+    {
+     "id": "dillards_6",
+     "en": "We have a gift set with a free lotion.",
+     "ru": "У нас есть подарочный набор с бесплатным лосьоном.",
+     "audio": "audio/lines/dillards_6.mp3",
+     "dur": 3.16,
+     "ruAudio": "audio/ru_lines/dillards_6.mp3"
+    },
+    {
+     "id": "dillards_7",
+     "en": "Would you like me to gift wrap it for you?",
+     "ru": "Хотите, я упакую это как подарок?",
+     "audio": "audio/lines/dillards_7.mp3",
+     "dur": 2.77,
+     "ruAudio": "audio/ru_lines/dillards_7.mp3"
+    }
+   ]
+  },
+  {
+   "id": "interview",
+   "track": "Работа",
+   "title": "Собеседование",
+   "ru": "Тема: собеседование на работу.",
+   "topicAudio": "audio/ru/topic_interview.mp3",
+   "items": [
+    {
+     "id": "interview_0",
+     "en": "Thank you for meeting with me today.",
+     "ru": "Спасибо, что встретились со мной сегодня.",
+     "audio": "audio/lines/interview_0.mp3",
+     "dur": 2.56,
+     "ruAudio": "audio/ru_lines/interview_0.mp3"
+    },
+    {
+     "id": "interview_1",
+     "en": "My name is Natalia, and I'm from Russia.",
+     "ru": "Меня зовут Наталия, я из России.",
+     "audio": "audio/lines/interview_1.mp3",
+     "dur": 3.63,
+     "ruAudio": "audio/ru_lines/interview_1.mp3"
+    },
+    {
+     "id": "interview_2",
+     "en": "I have experience in accounting and in sales.",
+     "ru": "У меня есть опыт в бухгалтерии и в продажах.",
+     "audio": "audio/lines/interview_2.mp3",
+     "dur": 4.02,
+     "ruAudio": "audio/ru_lines/interview_2.mp3"
+    },
+    {
+     "id": "interview_3",
+     "en": "Right now I work at Dillard's, in customer service.",
+     "ru": "Сейчас я работаю в Dillard's, с покупателями.",
+     "audio": "audio/lines/interview_3.mp3",
+     "dur": 4.21,
+     "ruAudio": "audio/ru_lines/interview_3.mp3"
+    },
+    {
+     "id": "interview_4",
+     "en": "My strengths are attention to detail and hard work.",
+     "ru": "Мои сильные стороны — внимание к деталям и трудолюбие.",
+     "audio": "audio/lines/interview_4.mp3",
+     "dur": 4.23,
+     "ruAudio": "audio/ru_lines/interview_4.mp3"
+    },
+    {
+     "id": "interview_5",
+     "en": "I learn new software quickly.",
+     "ru": "Я быстро осваиваю новые программы.",
+     "audio": "audio/lines/interview_5.mp3",
+     "dur": 2.56,
+     "ruAudio": "audio/ru_lines/interview_5.mp3"
+    },
+    {
+     "id": "interview_6",
+     "en": "Could you tell me more about the team?",
+     "ru": "Не могли бы вы рассказать подробнее о команде?",
+     "audio": "audio/lines/interview_6.mp3",
+     "dur": 2.46,
+     "ruAudio": "audio/ru_lines/interview_6.mp3"
+    },
+    {
+     "id": "interview_7",
+     "en": "What does a typical day look like in this job?",
+     "ru": "Как выглядит обычный день на этой работе?",
+     "audio": "audio/lines/interview_7.mp3",
+     "dur": 3.63,
+     "ruAudio": "audio/ru_lines/interview_7.mp3"
+    }
+   ]
+  },
+  {
+   "id": "office_phone",
+   "track": "Работа",
+   "title": "Офис: телефон и письма",
+   "ru": "Тема: звонки, голосовые сообщения, письма.",
+   "topicAudio": "audio/ru/topic_office_phone.mp3",
+   "items": [
+    {
+     "id": "office_phone_0",
+     "en": "Good morning, this is Natalia speaking.",
+     "ru": "Доброе утро, это Наталия.",
+     "audio": "audio/lines/office_phone_0.mp3",
+     "dur": 3.29,
+     "ruAudio": "audio/ru_lines/office_phone_0.mp3"
+    },
+    {
+     "id": "office_phone_1",
+     "en": "Could you repeat that, please?",
+     "ru": "Не могли бы вы повторить?",
+     "audio": "audio/lines/office_phone_1.mp3",
+     "dur": 2.38,
+     "ruAudio": "audio/ru_lines/office_phone_1.mp3"
+    },
+    {
+     "id": "office_phone_2",
+     "en": "Could you speak a little more slowly, please?",
+     "ru": "Не могли бы вы говорить чуть медленнее?",
+     "audio": "audio/lines/office_phone_2.mp3",
+     "dur": 3.4,
+     "ruAudio": "audio/ru_lines/office_phone_2.mp3"
+    },
+    {
+     "id": "office_phone_3",
+     "en": "I'm calling about your invoice from last month.",
+     "ru": "Я звоню по поводу вашего счёта за прошлый месяц.",
+     "audio": "audio/lines/office_phone_3.mp3",
+     "dur": 3.81,
+     "ruAudio": "audio/ru_lines/office_phone_3.mp3"
+    },
+    {
+     "id": "office_phone_4",
+     "en": "Let me check and call you back.",
+     "ru": "Давайте я проверю и перезвоню вам.",
+     "audio": "audio/lines/office_phone_4.mp3",
+     "dur": 2.56,
+     "ruAudio": "audio/ru_lines/office_phone_4.mp3"
+    },
+    {
+     "id": "office_phone_5",
+     "en": "Hi, this is Natalia. Please call me back at your convenience.",
+     "ru": "Здравствуйте, это Наталия. Перезвоните мне, пожалуйста, когда вам удобно.",
+     "audio": "audio/lines/office_phone_5.mp3",
+     "dur": 5.43,
+     "ruAudio": "audio/ru_lines/office_phone_5.mp3"
+    },
+    {
+     "id": "office_phone_6",
+     "en": "Please find the report attached.",
+     "ru": "Отчёт во вложении.",
+     "audio": "audio/lines/office_phone_6.mp3",
+     "dur": 2.82,
+     "ruAudio": "audio/ru_lines/office_phone_6.mp3"
+    },
+    {
+     "id": "office_phone_7",
+     "en": "Just to confirm, the meeting is on Tuesday at ten.",
+     "ru": "Уточняю: встреча во вторник в десять.",
+     "audio": "audio/lines/office_phone_7.mp3",
+     "dur": 4.55,
+     "ruAudio": "audio/ru_lines/office_phone_7.mp3"
+    }
+   ]
+  },
+  {
+   "id": "office_numbers",
+   "track": "Работа",
+   "title": "Офис: цифры и совещания",
+   "ru": "Тема: объяснить цифру на совещании.",
+   "topicAudio": "audio/ru/topic_office_numbers.mp3",
+   "items": [
+    {
+     "id": "office_numbers_0",
+     "en": "Sales went up by ten percent this month.",
+     "ru": "Продажи выросли на десять процентов в этом месяце.",
+     "audio": "audio/lines/office_numbers_0.mp3",
+     "dur": 3.81,
+     "ruAudio": "audio/ru_lines/office_numbers_0.mp3"
+    },
+    {
+     "id": "office_numbers_1",
+     "en": "Expenses were higher because of one large payment.",
+     "ru": "Расходы были выше из-за одного большого платежа.",
+     "audio": "audio/lines/office_numbers_1.mp3",
+     "dur": 3.94,
+     "ruAudio": "audio/ru_lines/office_numbers_1.mp3"
+    },
+    {
+     "id": "office_numbers_2",
+     "en": "This number is the total for the quarter.",
+     "ru": "Это число — итог за квартал.",
+     "audio": "audio/lines/office_numbers_2.mp3",
+     "dur": 3.19,
+     "ruAudio": "audio/ru_lines/office_numbers_2.mp3"
+    },
+    {
+     "id": "office_numbers_3",
+     "en": "I'm not sure. Let me double-check the numbers.",
+     "ru": "Я не уверена. Давайте я перепроверю цифры.",
+     "audio": "audio/lines/office_numbers_3.mp3",
+     "dur": 4.0,
+     "ruAudio": "audio/ru_lines/office_numbers_3.mp3"
+    },
+    {
+     "id": "office_numbers_4",
+     "en": "Can I ask a quick question?",
+     "ru": "Можно быстрый вопрос?",
+     "audio": "audio/lines/office_numbers_4.mp3",
+     "dur": 2.46,
+     "ruAudio": "audio/ru_lines/office_numbers_4.mp3"
+    },
+    {
+     "id": "office_numbers_5",
+     "en": "What is the deadline for this report?",
+     "ru": "Какой срок сдачи этого отчёта?",
+     "audio": "audio/lines/office_numbers_5.mp3",
+     "dur": 2.82,
+     "ruAudio": "audio/ru_lines/office_numbers_5.mp3"
+    },
+    {
+     "id": "office_numbers_6",
+     "en": "I'll send you the summary by the end of the day.",
+     "ru": "Я пришлю вам итог до конца дня.",
+     "audio": "audio/lines/office_numbers_6.mp3",
+     "dur": 3.89,
+     "ruAudio": "audio/ru_lines/office_numbers_6.mp3"
+    },
+    {
+     "id": "office_numbers_7",
+     "en": "Chris says I explain numbers very clearly.",
+     "ru": "Крис говорит, что я очень понятно объясняю цифры.",
+     "audio": "audio/lines/office_numbers_7.mp3",
+     "dur": 3.63,
+     "ruAudio": "audio/ru_lines/office_numbers_7.mp3"
+    }
+   ]
+  },
+  {
+   "id": "citizen_n400",
+   "track": "Гражданство",
+   "title": "Интервью USCIS: вопросы о себе",
+   "ru": "Тема: интервью на гражданство, вопросы о себе.",
+   "topicAudio": "audio/ru/topic_citizen_n400.mp3",
+   "items": [
+    {
+     "id": "citizen_n400_0",
+     "en": "Yes, I promise to tell the truth.",
+     "ru": "Да, я обещаю говорить правду.",
+     "audio": "audio/lines/citizen_n400_0.mp3",
+     "dur": 3.06,
+     "ruAudio": "audio/ru_lines/citizen_n400_0.mp3"
+    },
+    {
+     "id": "citizen_n400_1",
+     "en": "My name is Natalia Shtefan.",
+     "ru": "Меня зовут Наталия Штефан.",
+     "audio": "audio/lines/citizen_n400_1.mp3",
+     "dur": 3.37,
+     "ruAudio": "audio/ru_lines/citizen_n400_1.mp3"
+    },
+    {
+     "id": "citizen_n400_2",
+     "en": "I have been a permanent resident for five years.",
+     "ru": "Я постоянный житель уже пять лет.",
+     "audio": "audio/lines/citizen_n400_2.mp3",
+     "dur": 3.6,
+     "ruAudio": "audio/ru_lines/citizen_n400_2.mp3"
+    },
+    {
+     "id": "citizen_n400_3",
+     "en": "No, I have never been arrested.",
+     "ru": "Нет, меня никогда не арестовывали.",
+     "audio": "audio/lines/citizen_n400_3.mp3",
+     "dur": 3.27,
+     "ruAudio": "audio/ru_lines/citizen_n400_3.mp3"
+    },
+    {
+     "id": "citizen_n400_4",
+     "en": "No, I have not.",
+     "ru": "Нет, не было.",
+     "audio": "audio/lines/citizen_n400_4.mp3",
+     "dur": 2.14,
+     "ruAudio": "audio/ru_lines/citizen_n400_4.mp3"
+    },
+    {
+     "id": "citizen_n400_5",
+     "en": "Yes, I have filed my taxes every year.",
+     "ru": "Да, я подавала налоги каждый год.",
+     "audio": "audio/lines/citizen_n400_5.mp3",
+     "dur": 3.71,
+     "ruAudio": "audio/ru_lines/citizen_n400_5.mp3"
+    },
+    {
+     "id": "citizen_n400_6",
+     "en": "I work at Dillard's as a sales associate.",
+     "ru": "Я работаю в Dillard's продавцом-консультантом.",
+     "audio": "audio/lines/citizen_n400_6.mp3",
+     "dur": 3.66,
+     "ruAudio": "audio/ru_lines/citizen_n400_6.mp3"
+    },
+    {
+     "id": "citizen_n400_7",
+     "en": "Could you please repeat the question?",
+     "ru": "Не могли бы вы повторить вопрос?",
+     "audio": "audio/lines/citizen_n400_7.mp3",
+     "dur": 2.59,
+     "ruAudio": "audio/ru_lines/citizen_n400_7.mp3"
+    }
+   ]
+  },
+  {
+   "id": "citizen_civics",
+   "track": "Гражданство",
+   "title": "Вопросы о США (тест 2025)",
+   "ru": "Тема: вопросы по истории и устройству США. Повторяйте ответы.",
+   "topicAudio": "audio/ru/topic_citizen_civics.mp3",
+   "items": [
+    {
+     "id": "citizen_civics_0",
+     "en": "The supreme law of the land is the Constitution.",
+     "ru": "Высший закон страны — Конституция.",
+     "audio": "audio/lines/citizen_civics_0.mp3",
+     "dur": 3.92,
+     "ruAudio": "audio/ru_lines/citizen_civics_0.mp3"
+    },
+    {
+     "id": "citizen_civics_1",
+     "en": "The Constitution has twenty-seven amendments.",
+     "ru": "В Конституции двадцать семь поправок.",
+     "audio": "audio/lines/citizen_civics_1.mp3",
+     "dur": 3.84,
+     "ruAudio": "audio/ru_lines/citizen_civics_1.mp3"
+    },
+    {
+     "id": "citizen_civics_2",
+     "en": "The economic system of the United States is capitalism.",
+     "ru": "Экономическая система США — капитализм.",
+     "audio": "audio/lines/citizen_civics_2.mp3",
+     "dur": 4.73,
+     "ruAudio": "audio/ru_lines/citizen_civics_2.mp3"
+    },
+    {
+     "id": "citizen_civics_3",
+     "en": "The President is elected for four years.",
+     "ru": "Президента избирают на четыре года.",
+     "audio": "audio/lines/citizen_civics_3.mp3",
+     "dur": 3.24,
+     "ruAudio": "audio/ru_lines/citizen_civics_3.mp3"
+    },
+    {
+     "id": "citizen_civics_4",
+     "en": "The Supreme Court is the highest court.",
+     "ru": "Верховный суд — высший суд.",
+     "audio": "audio/lines/citizen_civics_4.mp3",
+     "dur": 2.98,
+     "ruAudio": "audio/ru_lines/citizen_civics_4.mp3"
+    },
+    {
+     "id": "citizen_civics_5",
+     "en": "Thomas Jefferson wrote the Declaration of Independence.",
+     "ru": "Декларацию независимости написал Томас Джефферсон.",
+     "audio": "audio/lines/citizen_civics_5.mp3",
+     "dur": 4.39,
+     "ruAudio": "audio/ru_lines/citizen_civics_5.mp3"
+    },
+    {
+     "id": "citizen_civics_6",
+     "en": "The flag has thirteen stripes for the thirteen original colonies.",
+     "ru": "На флаге тринадцать полос — по числу первых колоний.",
+     "audio": "audio/lines/citizen_civics_6.mp3",
+     "dur": 5.15,
+     "ruAudio": "audio/ru_lines/citizen_civics_6.mp3"
+    },
+    {
+     "id": "citizen_civics_7",
+     "en": "The capital of the United States is Washington, D.C.",
+     "ru": "Столица США — Вашингтон.",
+     "audio": "audio/lines/citizen_civics_7.mp3",
+     "dur": 4.47,
+     "ruAudio": "audio/ru_lines/citizen_civics_7.mp3"
+    }
+   ]
+  },
+  {
+   "id": "ai_accounting",
+   "track": "Бухгалтерия",
+   "title": "AI в бухгалтерии и QuickBooks",
+   "ru": "Тема: работа с AI-помощником в QuickBooks.",
+   "topicAudio": "audio/ru/topic_ai_accounting.mp3",
+   "items": [
+    {
+     "id": "ai_accounting_0",
+     "en": "AI can categorize bank transactions automatically.",
+     "ru": "AI может автоматически распределять банковские операции по категориям.",
+     "audio": "audio/lines/ai_accounting_0.mp3",
+     "dur": 4.55,
+     "ruAudio": "audio/ru_lines/ai_accounting_0.mp3"
+    },
+    {
+     "id": "ai_accounting_1",
+     "en": "I always review what the AI suggests.",
+     "ru": "Я всегда проверяю, что предлагает AI.",
+     "audio": "audio/lines/ai_accounting_1.mp3",
+     "dur": 3.71,
+     "ruAudio": "audio/ru_lines/ai_accounting_1.mp3"
+    },
+    {
+     "id": "ai_accounting_2",
+     "en": "Please reconcile the checking account for October.",
+     "ru": "Пожалуйста, сверьте расчётный счёт за октябрь.",
+     "audio": "audio/lines/ai_accounting_2.mp3",
+     "dur": 3.71,
+     "ruAudio": "audio/ru_lines/ai_accounting_2.mp3"
+    },
+    {
+     "id": "ai_accounting_3",
+     "en": "The difference is not zero. Let's find the missing transaction.",
+     "ru": "Разница не равна нулю. Давайте найдём пропущенную операцию.",
+     "audio": "audio/lines/ai_accounting_3.mp3",
+     "dur": 5.28,
+     "ruAudio": "audio/ru_lines/ai_accounting_3.mp3"
+    },
+    {
+     "id": "ai_accounting_4",
+     "en": "Can you draft a profit and loss report for this month?",
+     "ru": "Можешь подготовить отчёт о прибылях и убытках за этот месяц?",
+     "audio": "audio/lines/ai_accounting_4.mp3",
+     "dur": 4.13,
+     "ruAudio": "audio/ru_lines/ai_accounting_4.mp3"
+    },
+    {
+     "id": "ai_accounting_5",
+     "en": "This charge looks unusual. Please check it.",
+     "ru": "Этот платёж выглядит странно. Проверьте его, пожалуйста.",
+     "audio": "audio/lines/ai_accounting_5.mp3",
+     "dur": 3.94,
+     "ruAudio": "audio/ru_lines/ai_accounting_5.mp3"
+    },
+    {
+     "id": "ai_accounting_6",
+     "en": "I never share client passwords or tax ID numbers with AI.",
+     "ru": "Я никогда не даю AI пароли клиентов и налоговые номера.",
+     "audio": "audio/lines/ai_accounting_6.mp3",
+     "dur": 5.28,
+     "ruAudio": "audio/ru_lines/ai_accounting_6.mp3"
+    },
+    {
+     "id": "ai_accounting_7",
+     "en": "The AI saves time, but the accountant makes the decision.",
+     "ru": "AI экономит время, но решение принимает бухгалтер.",
+     "audio": "audio/lines/ai_accounting_7.mp3",
+     "dur": 4.75,
+     "ruAudio": "audio/ru_lines/ai_accounting_7.mp3"
+    }
+   ]
+  },
+  {
+   "id": "ru_us_terms",
+   "track": "Бухгалтерия",
+   "title": "Словарь: русская и американская бухгалтерия",
+   "ru": "Тема: бухгалтерские слова по-английски.",
+   "topicAudio": "audio/ru/topic_ru_us_terms.mp3",
+   "items": [
+    {
+     "id": "ru_us_terms_0",
+     "en": "A balance sheet shows assets, liabilities, and equity.",
+     "ru": "Бухгалтерский баланс показывает активы, обязательства и капитал.",
+     "audio": "audio/lines/ru_us_terms_0.mp3",
+     "dur": 4.52,
+     "ruAudio": "audio/ru_lines/ru_us_terms_0.mp3"
+    },
+    {
+     "id": "ru_us_terms_1",
+     "en": "Accounts receivable is money that customers owe us.",
+     "ru": "Дебиторская задолженность — деньги, которые нам должны клиенты.",
+     "audio": "audio/lines/ru_us_terms_1.mp3",
+     "dur": 4.15,
+     "ruAudio": "audio/ru_lines/ru_us_terms_1.mp3"
+    },
+    {
+     "id": "ru_us_terms_2",
+     "en": "Accounts payable is money that we owe to vendors.",
+     "ru": "Кредиторская задолженность — деньги, которые мы должны поставщикам.",
+     "audio": "audio/lines/ru_us_terms_2.mp3",
+     "dur": 4.26,
+     "ruAudio": "audio/ru_lines/ru_us_terms_2.mp3"
+    },
+    {
+     "id": "ru_us_terms_3",
+     "en": "In Russia, I worked with 1C Accounting.",
+     "ru": "В России я работала в 1С:Бухгалтерии.",
+     "audio": "audio/lines/ru_us_terms_3.mp3",
+     "dur": 3.92,
+     "ruAudio": "audio/ru_lines/ru_us_terms_3.mp3"
+    },
+    {
+     "id": "ru_us_terms_4",
+     "en": "In the United States, many small businesses use QuickBooks.",
+     "ru": "В США многие малые компании используют QuickBooks.",
+     "audio": "audio/lines/ru_us_terms_4.mp3",
+     "dur": 4.96,
+     "ruAudio": "audio/ru_lines/ru_us_terms_4.mp3"
+    },
+    {
+     "id": "ru_us_terms_5",
+     "en": "The chart of accounts is more flexible in the US.",
+     "ru": "План счетов в США более гибкий.",
+     "audio": "audio/lines/ru_us_terms_5.mp3",
+     "dur": 4.02,
+     "ruAudio": "audio/ru_lines/ru_us_terms_5.mp3"
+    },
+    {
+     "id": "ru_us_terms_6",
+     "en": "A journal entry has a debit and a credit.",
+     "ru": "В проводке есть дебет и кредит.",
+     "audio": "audio/lines/ru_us_terms_6.mp3",
+     "dur": 3.37,
+     "ruAudio": "audio/ru_lines/ru_us_terms_6.mp3"
+    },
+    {
+     "id": "ru_us_terms_7",
+     "en": "Sales tax is different from VAT.",
+     "ru": "Налог с продаж отличается от НДС.",
+     "audio": "audio/lines/ru_us_terms_7.mp3",
+     "dur": 3.34,
+     "ruAudio": "audio/ru_lines/ru_us_terms_7.mp3"
+    }
+   ]
+  }
+ ],
+ "words": {
+  "1c": "audio/words/1c.mp3",
+  "a": "audio/words/a.mp3",
+  "about": "audio/words/about.mp3",
+  "account": "audio/words/account.mp3",
+  "accountant": "audio/words/accountant.mp3",
+  "accounting": "audio/words/accounting.mp3",
+  "accounts": "audio/words/accounts.mp3",
+  "afternoon": "audio/words/afternoon.mp3",
+  "ai": "audio/words/ai.mp3",
+  "always": "audio/words/always.mp3",
+  "amendments": "audio/words/amendments.mp3",
+  "an": "audio/words/an.mp3",
+  "and": "audio/words/and.mp3",
+  "are": "audio/words/are.mp3",
+  "arrested": "audio/words/arrested.mp3",
+  "as": "audio/words/as.mp3",
+  "ask": "audio/words/ask.mp3",
+  "assets": "audio/words/assets.mp3",
+  "associate": "audio/words/associate.mp3",
+  "at": "audio/words/at.mp3",
+  "attached": "audio/words/attached.mp3",
+  "attention": "audio/words/attention.mp3",
+  "automatically": "audio/words/automatically.mp3",
+  "back": "audio/words/back.mp3",
+  "balance": "audio/words/balance.mp3",
+  "bank": "audio/words/bank.mp3",
+  "beautiful": "audio/words/beautiful.mp3",
+  "because": "audio/words/because.mp3",
+  "been": "audio/words/been.mp3",
+  "better": "audio/words/better.mp3",
+  "businesses": "audio/words/businesses.mp3",
+  "but": "audio/words/but.mp3",
+  "by": "audio/words/by.mp3",
+  "c": "audio/words/c.mp3",
+  "call": "audio/words/call.mp3",
+  "called": "audio/words/called.mp3",
+  "calling": "audio/words/calling.mp3",
+  "can": "audio/words/can.mp3",
+  "capital": "audio/words/capital.mp3",
+  "capitalism": "audio/words/capitalism.mp3",
+  "car": "audio/words/car.mp3",
+  "categorize": "audio/words/categorize.mp3",
+  "charge": "audio/words/charge.mp3",
+  "chart": "audio/words/chart.mp3",
+  "check": "audio/words/check.mp3",
+  "checking": "audio/words/checking.mp3",
+  "chicken": "audio/words/chicken.mp3",
+  "chris": "audio/words/chris.mp3",
+  "clearly": "audio/words/clearly.mp3",
+  "client": "audio/words/client.mp3",
+  "cold": "audio/words/cold.mp3",
+  "colonies": "audio/words/colonies.mp3",
+  "confirm": "audio/words/confirm.mp3",
+  "constitution": "audio/words/constitution.mp3",
+  "convenience": "audio/words/convenience.mp3",
+  "cooking": "audio/words/cooking.mp3",
+  "could": "audio/words/could.mp3",
+  "court": "audio/words/court.mp3",
+  "credit": "audio/words/credit.mp3",
+  "customer": "audio/words/customer.mp3",
+  "customers": "audio/words/customers.mp3",
+  "cybertruck": "audio/words/cybertruck.mp3",
+  "d": "audio/words/d.mp3",
+  "day": "audio/words/day.mp3",
+  "deadline": "audio/words/deadline.mp3",
+  "debit": "audio/words/debit.mp3",
+  "decision": "audio/words/decision.mp3",
+  "declaration": "audio/words/declaration.mp3",
+  "degrees": "audio/words/degrees.mp3",
+  "delicious": "audio/words/delicious.mp3",
+  "detail": "audio/words/detail.mp3",
+  "difference": "audio/words/difference.mp3",
+  "different": "audio/words/different.mp3",
+  "dillard's": "audio/words/dillard_s.mp3",
+  "dinner": "audio/words/dinner.mp3",
+  "do": "audio/words/do.mp3",
+  "does": "audio/words/does.mp3",
+  "double": "audio/words/double.mp3",
+  "draft": "audio/words/draft.mp3",
+  "dress": "audio/words/dress.mp3",
+  "drive": "audio/words/drive.mp3",
+  "driving": "audio/words/driving.mp3",
+  "eat": "audio/words/eat.mp3",
+  "eating": "audio/words/eating.mp3",
+  "economic": "audio/words/economic.mp3",
+  "elected": "audio/words/elected.mp3",
+  "end": "audio/words/end.mp3",
+  "english": "audio/words/english.mp3",
+  "entry": "audio/words/entry.mp3",
+  "equity": "audio/words/equity.mp3",
+  "every": "audio/words/every.mp3",
+  "everyone": "audio/words/everyone.mp3",
+  "expenses": "audio/words/expenses.mp3",
+  "experience": "audio/words/experience.mp3",
+  "explain": "audio/words/explain.mp3",
+  "filed": "audio/words/filed.mp3",
+  "find": "audio/words/find.mp3",
+  "five": "audio/words/five.mp3",
+  "flag": "audio/words/flag.mp3",
+  "flexible": "audio/words/flexible.mp3",
+  "for": "audio/words/for.mp3",
+  "four": "audio/words/four.mp3",
+  "fragrance": "audio/words/fragrance.mp3",
+  "free": "audio/words/free.mp3",
+  "fresh": "audio/words/fresh.mp3",
+  "from": "audio/words/from.mp3",
+  "gas": "audio/words/gas.mp3",
+  "gift": "audio/words/gift.mp3",
+  "go": "audio/words/go.mp3",
+  "good": "audio/words/good.mp3",
+  "halloween": "audio/words/halloween.mp3",
+  "happy": "audio/words/happy.mp3",
+  "hard": "audio/words/hard.mp3",
+  "has": "audio/words/has.mp3",
+  "have": "audio/words/have.mp3",
+  "help": "audio/words/help.mp3",
+  "helped": "audio/words/helped.mp3",
+  "hi": "audio/words/hi.mp3",
+  "higher": "audio/words/higher.mp3",
+  "highest": "audio/words/highest.mp3",
+  "hot": "audio/words/hot.mp3",
+  "house": "audio/words/house.mp3",
+  "how": "audio/words/how.mp3",
+  "i": "audio/words/i.mp3",
+  "i'll": "audio/words/i_ll.mp3",
+  "i'm": "audio/words/i_m.mp3",
+  "id": "audio/words/id.mp3",
+  "in": "audio/words/in.mp3",
+  "independence": "audio/words/independence.mp3",
+  "instagram": "audio/words/instagram.mp3",
+  "invoice": "audio/words/invoice.mp3",
+  "is": "audio/words/is.mp3",
+  "it": "audio/words/it.mp3",
+  "it's": "audio/words/it_s.mp3",
+  "itself": "audio/words/itself.mp3",
+  "jefferson": "audio/words/jefferson.mp3",
+  "job": "audio/words/job.mp3",
+  "journal": "audio/words/journal.mp3",
+  "just": "audio/words/just.mp3",
+  "kitchen": "audio/words/kitchen.mp3",
+  "land": "audio/words/land.mp3",
+  "large": "audio/words/large.mp3",
+  "last": "audio/words/last.mp3",
+  "late": "audio/words/late.mp3",
+  "law": "audio/words/law.mp3",
+  "learn": "audio/words/learn.mp3",
+  "learning": "audio/words/learning.mp3",
+  "left": "audio/words/left.mp3",
+  "let": "audio/words/let.mp3",
+  "let's": "audio/words/let_s.mp3",
+  "liabilities": "audio/words/liabilities.mp3",
+  "light": "audio/words/light.mp3",
+  "like": "audio/words/like.mp3",
+  "little": "audio/words/little.mp3",
+  "long": "audio/words/long.mp3",
+  "look": "audio/words/look.mp3",
+  "looking": "audio/words/looking.mp3",
+  "looks": "audio/words/looks.mp3",
+  "loss": "audio/words/loss.mp3",
+  "lot": "audio/words/lot.mp3",
+  "lotion": "audio/words/lotion.mp3",
+  "love": "audio/words/love.mp3",
+  "makes": "audio/words/makes.mp3",
+  "many": "audio/words/many.mp3",
+  "me": "audio/words/me.mp3",
+  "meeting": "audio/words/meeting.mp3",
+  "meteor": "audio/words/meteor.mp3",
+  "miami": "audio/words/miami.mp3",
+  "missing": "audio/words/missing.mp3",
+  "money": "audio/words/money.mp3",
+  "month": "audio/words/month.mp3",
+  "more": "audio/words/more.mp3",
+  "morning": "audio/words/morning.mp3",
+  "my": "audio/words/my.mp3",
+  "name": "audio/words/name.mp3",
+  "natalia": "audio/words/natalia.mp3",
+  "need": "audio/words/need.mp3",
+  "never": "audio/words/never.mp3",
+  "new": "audio/words/new.mp3",
+  "next": "audio/words/next.mp3",
+  "nice": "audio/words/nice.mp3",
+  "ninety": "audio/words/ninety.mp3",
+  "no": "audio/words/no.mp3",
+  "not": "audio/words/not.mp3",
+  "now": "audio/words/now.mp3",
+  "number": "audio/words/number.mp3",
+  "numbers": "audio/words/numbers.mp3",
+  "october": "audio/words/october.mp3",
+  "of": "audio/words/of.mp3",
+  "on": "audio/words/on.mp3",
+  "one": "audio/words/one.mp3",
+  "or": "audio/words/or.mp3",
+  "original": "audio/words/original.mp3",
+  "orleans": "audio/words/orleans.mp3",
+  "our": "audio/words/our.mp3",
+  "outside": "audio/words/outside.mp3",
+  "owe": "audio/words/owe.mp3",
+  "passenger": "audio/words/passenger.mp3",
+  "passwords": "audio/words/passwords.mp3",
+  "payable": "audio/words/payable.mp3",
+  "payment": "audio/words/payment.mp3",
+  "percent": "audio/words/percent.mp3",
+  "permanent": "audio/words/permanent.mp3",
+  "please": "audio/words/please.mp3",
+  "practice": "audio/words/practice.mp3",
+  "president": "audio/words/president.mp3",
+  "profit": "audio/words/profit.mp3",
+  "promise": "audio/words/promise.mp3",
+  "quarter": "audio/words/quarter.mp3",
+  "question": "audio/words/question.mp3",
+  "quick": "audio/words/quick.mp3",
+  "quickbooks": "audio/words/quickbooks.mp3",
+  "quickly": "audio/words/quickly.mp3",
+  "receivable": "audio/words/receivable.mp3",
+  "reconcile": "audio/words/reconcile.mp3",
+  "repeat": "audio/words/repeat.mp3",
+  "report": "audio/words/report.mp3",
+  "resident": "audio/words/resident.mp3",
+  "review": "audio/words/review.mp3",
+  "rice": "audio/words/rice.mp3",
+  "right": "audio/words/right.mp3",
+  "russia": "audio/words/russia.mp3",
+  "sales": "audio/words/sales.mp3",
+  "saves": "audio/words/saves.mp3",
+  "saw": "audio/words/saw.mp3",
+  "says": "audio/words/says.mp3",
+  "seat": "audio/words/seat.mp3",
+  "see": "audio/words/see.mp3",
+  "self": "audio/words/self.mp3",
+  "send": "audio/words/send.mp3",
+  "service": "audio/words/service.mp3",
+  "set": "audio/words/set.mp3",
+  "seven": "audio/words/seven.mp3",
+  "share": "audio/words/share.mp3",
+  "sheet": "audio/words/sheet.mp3",
+  "shooting": "audio/words/shooting.mp3",
+  "shower": "audio/words/shower.mp3",
+  "shows": "audio/words/shows.mp3",
+  "shtefan": "audio/words/shtefan.mp3",
+  "size": "audio/words/size.mp3",
+  "slowly": "audio/words/slowly.mp3",
+  "small": "audio/words/small.mp3",
+  "smaller": "audio/words/smaller.mp3",
+  "so": "audio/words/so.mp3",
+  "software": "audio/words/software.mp3",
+  "something": "audio/words/something.mp3",
+  "speak": "audio/words/speak.mp3",
+  "speaking": "audio/words/speaking.mp3",
+  "special": "audio/words/special.mp3",
+  "star": "audio/words/star.mp3",
+  "stars": "audio/words/stars.mp3",
+  "states": "audio/words/states.mp3",
+  "stop": "audio/words/stop.mp3",
+  "strengths": "audio/words/strengths.mp3",
+  "stripes": "audio/words/stripes.mp3",
+  "stronger": "audio/words/stronger.mp3",
+  "suggests": "audio/words/suggests.mp3",
+  "summary": "audio/words/summary.mp3",
+  "supreme": "audio/words/supreme.mp3",
+  "sure": "audio/words/sure.mp3",
+  "sweet": "audio/words/sweet.mp3",
+  "system": "audio/words/system.mp3",
+  "tax": "audio/words/tax.mp3",
+  "taxes": "audio/words/taxes.mp3",
+  "team": "audio/words/team.mp3",
+  "tell": "audio/words/tell.mp3",
+  "temperature": "audio/words/temperature.mp3",
+  "ten": "audio/words/ten.mp3",
+  "thank": "audio/words/thank.mp3",
+  "that": "audio/words/that.mp3",
+  "the": "audio/words/the.mp3",
+  "there": "audio/words/there.mp3",
+  "thirteen": "audio/words/thirteen.mp3",
+  "this": "audio/words/this.mp3",
+  "thomas": "audio/words/thomas.mp3",
+  "time": "audio/words/time.mp3",
+  "to": "audio/words/to.mp3",
+  "today": "audio/words/today.mp3",
+  "tomorrow": "audio/words/tomorrow.mp3",
+  "tonight": "audio/words/tonight.mp3",
+  "total": "audio/words/total.mp3",
+  "traffic": "audio/words/traffic.mp3",
+  "transaction": "audio/words/transaction.mp3",
+  "transactions": "audio/words/transactions.mp3",
+  "trip": "audio/words/trip.mp3",
+  "truth": "audio/words/truth.mp3",
+  "try": "audio/words/try.mp3",
+  "tuesday": "audio/words/tuesday.mp3",
+  "tundra": "audio/words/tundra.mp3",
+  "turn": "audio/words/turn.mp3",
+  "tutor": "audio/words/tutor.mp3",
+  "twenty": "audio/words/twenty.mp3",
+  "typical": "audio/words/typical.mp3",
+  "united": "audio/words/united.mp3",
+  "unusual": "audio/words/unusual.mp3",
+  "up": "audio/words/up.mp3",
+  "us": "audio/words/us.mp3",
+  "use": "audio/words/use.mp3",
+  "vat": "audio/words/vat.mp3",
+  "vendors": "audio/words/vendors.mp3",
+  "very": "audio/words/very.mp3",
+  "want": "audio/words/want.mp3",
+  "warm": "audio/words/warm.mp3",
+  "was": "audio/words/was.mp3",
+  "washington": "audio/words/washington.mp3",
+  "watch": "audio/words/watch.mp3",
+  "we": "audio/words/we.mp3",
+  "weather": "audio/words/weather.mp3",
+  "weekend": "audio/words/weekend.mp3",
+  "welcome": "audio/words/welcome.mp3",
+  "went": "audio/words/went.mp3",
+  "were": "audio/words/were.mp3",
+  "what": "audio/words/what.mp3",
+  "when": "audio/words/when.mp3",
+  "which": "audio/words/which.mp3",
+  "with": "audio/words/with.mp3",
+  "word": "audio/words/word.mp3",
+  "work": "audio/words/work.mp3",
+  "worked": "audio/words/worked.mp3",
+  "would": "audio/words/would.mp3",
+  "wrap": "audio/words/wrap.mp3",
+  "wrote": "audio/words/wrote.mp3",
+  "year": "audio/words/year.mp3",
+  "years": "audio/words/years.mp3",
+  "yes": "audio/words/yes.mp3",
+  "you": "audio/words/you.mp3",
+  "your": "audio/words/your.mp3",
+  "zero": "audio/words/zero.mp3"
+ },
+ "praiseEn": {
+  "good": {
+   "text": "Good.",
+   "audio": "audio/en/praise_good.mp3",
+   "dur": 0.5
+  },
+  "goodjob": {
+   "text": "Good job!",
+   "audio": "audio/en/praise_goodjob.mp3",
+   "dur": 0.81
+  },
+  "great": {
+   "text": "Great!",
+   "audio": "audio/en/praise_great.mp3",
+   "dur": 0.5
+  },
+  "nice": {
+   "text": "Nice work, Natalia!",
+   "audio": "audio/en/praise_nice.mp3",
+   "dur": 1.67
+  },
+  "perfect": {
+   "text": "Perfect!",
+   "audio": "audio/en/praise_perfect.mp3",
+   "dur": 0.68
+  },
+  "welldone": {
+   "text": "Well done!",
+   "audio": "audio/en/praise_welldone.mp3",
+   "dur": 0.78
+  },
+  "lesson_done": {
+   "text": "Well done, Natalia! Lesson complete.",
+   "audio": "audio/en/praise_lesson_done.mp3",
+   "dur": 2.87
+  }
+ },
+ "praiseRu": {
+  "molodets": {
+   "text": "Молодец!",
+   "audio": "audio/ru/praise_molodets.mp3",
+   "dur": 0.65
+  },
+  "horosho": {
+   "text": "Хорошо!",
+   "audio": "audio/ru/praise_horosho.mp3",
+   "dur": 0.68
+  },
+  "otlichno": {
+   "text": "Отлично, Наталия!",
+   "audio": "audio/ru/praise_otlichno.mp3",
+   "dur": 1.83
+  },
+  "umnitsa": {
+   "text": "Умница!",
+   "audio": "audio/ru/praise_umnitsa.mp3",
+   "dur": 0.68
+  },
+  "tak": {
+   "text": "Так держать!",
+   "audio": "audio/ru/praise_tak.mp3",
+   "dur": 0.89
+  },
+  "lesson_done": {
+   "text": "Молодец, Наталия! Урок закончен.",
+   "audio": "audio/ru/praise_lesson_done.mp3",
+   "dur": 3.13
+  }
+ }
+}
