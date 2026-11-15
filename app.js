@@ -53,7 +53,7 @@ function finishLesson(sess){if(sess.kind==='lesson'){const d=S.get('done',[]);if
 
 /* ---------- Normal lesson (audio only, no lesson text on screen) ---------- */
 let L=null;
-async function startLesson(sess,idx=0){stopAll();L={sess,idx,run:++runId};pushHistory(sess);$('lessonTitle').textContent=sess.title;show('lesson');
+async function startLesson(sess,idx=0){stopAll();L={sess,idx,run:++runId};pushHistory(sess);$('lessonTitle').textContent=sess.title;$('lessonCount').textContent=(idx+1)+' / '+sess.items.length;$('lessonBar').style.width=(100*idx/sess.items.length)+'%';$('lessonStatus').textContent='🔊';show('lesson');
   if(idx===0&&sess.topicAudio){await play(D.cues.listen_repeat);await play(sess.topicAudio);}else if(idx>0)await play(D.cues.resume);
   lessonStep();}
 async function lessonStep(){const my=L.run;const it=itemById(L.sess.items[L.idx]);saveState('lesson',L.sess,L.idx);
@@ -171,7 +171,7 @@ async function init(){D=await (await fetch('data.json',{cache:'no-cache'})).json
   document.querySelectorAll('[data-home]').forEach(b=>b.onclick=goHome);
   $('lAgain').onclick=async()=>{if(!L)return;const it=itemById(L.sess.items[L.idx]);stopAudio();await play(it.audio);};
   $('lGot').onclick=()=>{stopAudio();lessonAnswer(true);};$('lHard').onclick=()=>{stopAudio();lessonAnswer(false);};
-  $('lStop').onclick=async()=>{if(L)saveState('lesson',L.sess,L.idx);stopAll();await play(D.cues.paused);goHome();};
+  $('lStop').onclick=async()=>{if(L)saveState('lesson',L.sess,L.idx);L=null;stopAll();refreshHome();show('home');await play(D.cues.paused);};
   $('lBack').onclick=async()=>{const cur=L&&L.sess.lessonId;stopAll();await play(D.cues.back);startLesson(sessionFor('lesson',previousLesson(cur)));};
   $('carPause').onclick=()=>carPause(false);$('carBack').onclick=carBack;$('carHome').onclick=goHome;
   refreshHome();}
